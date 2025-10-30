@@ -1,0 +1,19 @@
+# Avatar Identity Training Config - Dot Aurora
+id: avatar.identity.dot_aurora
+kind: lora
+sdx_version: "1.5"
+base_model: runwayml/stable-diffusion-v1-5
+token: dot_aurora
+train_data_dir: /data/avatar/identity/dot_aurora/images
+resolution: 640
+lora_rank: 16
+max_train_steps: 4000
+learning_rate: 1e-4
+batch_size: 1
+negatives: "photo, hyperrealistic, text, watermark"
+
+# Optional metadata
+description: "Unique identity LoRA for Dot Aurora character"
+tags: ["identity", "character", "dot_aurora", "persona"]
+author: "Talent Factory"
+license: "Private"

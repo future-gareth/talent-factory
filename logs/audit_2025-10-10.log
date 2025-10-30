@@ -1,0 +1,84 @@
+{"timestamp": "2025-10-10T12:54:15.968633", "action": "hf_datasets_searched", "details": {"query": "general knowledge", "results": 10}}
+{"timestamp": "2025-10-10T12:54:19.456896", "action": "hf_dataset_downloaded", "details": {"dataset_id": "MuskumPillerum/General-Knowledge", "local_id": "f285663c-fdb8-4179-b1d1-14af460308e2", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:56:23.555366", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T12:56:23.564162", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T12:56:45.995950", "action": "hf_datasets_searched", "details": {"query": "general knowledge", "results": 10}}
+{"timestamp": "2025-10-10T12:56:50.171773", "action": "hf_dataset_downloaded", "details": {"dataset_id": "MuskumPillerum/General-Knowledge", "local_id": "a2fa986a-d0b9-470d-9e24-2d951551c22f", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:56:55.805169", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Data4AI/qa-dataset-general-knowledge-60", "local_id": "f86482a5-7be6-4c0a-bb70-d8861f8b0f93", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:57:10.077190", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept19-general_knowledge-y_train", "local_id": "86ca0672-0ed0-4df7-96db-82f73ca235c9", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:57:11.177210", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept-19-general_knowledge-y_test", "local_id": "31d478fe-1482-449e-b94b-5ec650dc765a", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:57:14.481876", "action": "hf_dataset_downloaded", "details": {"dataset_id": "summykai/SFT-Dataset-General-Knowledge", "local_id": "9b8eef80-7877-426e-a858-bc9527e793d2", "sample_size": 100}}
+{"timestamp": "2025-10-10T12:57:30.833719", "action": "training_started", "details": {"train_id": "a2607eeb-51d4-4990-b3e8-2a5d3af6e711", "base_model": "llama-2-7b", "dataset_ids": ["a2fa986a-d0b9-470d-9e24-2d951551c22f", "f86482a5-7be6-4c0a-bb70-d8861f8b0f93", "86ca0672-0ed0-4df7-96db-82f73ca235c9", "31d478fe-1482-449e-b94b-5ec650dc765a", "9b8eef80-7877-426e-a858-bc9527e793d2"]}}
+{"timestamp": "2025-10-10T13:25:13.630463", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T13:25:13.635955", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T13:26:32.148438", "action": "talent_tested_mcp", "details": {"talent_id": "talent_1760030293272"}}
+{"timestamp": "2025-10-10T13:26:40.735977", "action": "talent_tested_mcp", "details": {"talent_id": "talent_1760029944891"}}
+{"timestamp": "2025-10-10T14:18:27.814714", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:18:27.817117", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T14:19:31.302696", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:19:31.305504", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T14:20:50.922845", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:20:50.925791", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T14:21:12.365714", "action": "hf_datasets_searched", "details": {"query": "general knowledge", "results": 10}}
+{"timestamp": "2025-10-10T14:21:14.808636", "action": "hf_dataset_downloaded", "details": {"dataset_id": "MuskumPillerum/General-Knowledge", "local_id": "f7fd0f28-c3ee-4d59-ba73-e95be257e756", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:19.177639", "action": "hf_dataset_downloaded", "details": {"dataset_id": "SciKnowOrg/ontolearner-general_knowledge", "local_id": "75a7b939-2a26-4faa-a823-21ded8284302", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:25.888419", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Data4AI/qa-dataset-general-knowledge-60", "local_id": "967f205f-b753-41f2-ac21-98eaf6e25ff1", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:38.185788", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept19-general_knowledge-y_train", "local_id": "2d6e1d48-f24e-484d-9bb6-7b5923b636fe", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:38.907476", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept-19-general_knowledge-y_test", "local_id": "8725c761-0827-4f88-8b1b-f9b81854797e", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:45.291604", "action": "hf_dataset_downloaded", "details": {"dataset_id": "summykai/SFT-Dataset-General-Knowledge", "local_id": "730b2f19-740c-41b0-9a24-1f3163722442", "sample_size": 100}}
+{"timestamp": "2025-10-10T14:21:54.491694", "action": "training_started", "details": {"train_id": "95729201-3123-4c4b-8e3f-30c12f7ae112", "base_model": "llama-2-7b", "dataset_ids": ["f7fd0f28-c3ee-4d59-ba73-e95be257e756", "75a7b939-2a26-4faa-a823-21ded8284302", "967f205f-b753-41f2-ac21-98eaf6e25ff1", "2d6e1d48-f24e-484d-9bb6-7b5923b636fe", "8725c761-0827-4f88-8b1b-f9b81854797e", "730b2f19-740c-41b0-9a24-1f3163722442"]}}
+{"timestamp": "2025-10-10T14:57:00.502506", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:57:21.841428", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:57:41.092394", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T14:57:57.339346", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-10T15:05:29.033512", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:09:07.014406", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:09:07.017215", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T15:09:53.322311", "action": "hf_datasets_searched", "details": {"query": "General Knowledge", "results": 10}}
+{"timestamp": "2025-10-10T15:09:56.237486", "action": "hf_dataset_downloaded", "details": {"dataset_id": "MuskumPillerum/General-Knowledge", "local_id": "61f4c674-0ed5-4466-911a-01eefe191415", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:10:01.360880", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept19-general_knowledge-y_train", "local_id": "130f6c52-055a-4f0d-9b36-72ad4e5eeca5", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:10:07.550179", "action": "hf_dataset_downloaded", "details": {"dataset_id": "summykai/SFT-Dataset-General-Knowledge", "local_id": "f47fb98d-ca47-4cfb-98b7-777e49a231d5", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:10:20.538148", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Na0s/sft-ready-MuskumPillerum-General-Knowledge", "local_id": "37178522-b1e8-4581-a874-559b64a7c0a0", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:10:27.116762", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept-19-general_knowledge-y_test", "local_id": "6ea24147-fdfa-47b5-ae8e-07985b597d8d", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:10:49.758874", "action": "training_started", "details": {"train_id": "aac405ba-edd0-45a7-9942-85e67fce5411", "base_model": "mlx-mistral-7b", "dataset_ids": ["61f4c674-0ed5-4466-911a-01eefe191415", "130f6c52-055a-4f0d-9b36-72ad4e5eeca5", "f47fb98d-ca47-4cfb-98b7-777e49a231d5", "37178522-b1e8-4581-a874-559b64a7c0a0", "6ea24147-fdfa-47b5-ae8e-07985b597d8d"]}}
+{"timestamp": "2025-10-10T15:12:31.755876", "action": "training_completed", "details": {"talent_id": "aac405ba-edd0-45a7-9942-85e67fce5411"}}
+{"timestamp": "2025-10-10T15:25:44.740935", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:25:44.744302", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T15:26:04.210620", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:26:04.212770", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T15:38:20.999110", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:38:21.001586", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-10T15:38:34.091510", "action": "hf_datasets_searched", "details": {"query": "general knowledge", "results": 10}}
+{"timestamp": "2025-10-10T15:38:35.692981", "action": "hf_dataset_downloaded", "details": {"dataset_id": "MuskumPillerum/General-Knowledge", "local_id": "f0918bdf-b81d-4fc2-abe9-e0ddd98a8c22", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:41.024907", "action": "hf_dataset_downloaded", "details": {"dataset_id": "amiguel/general_knowledge", "local_id": "dd268781-8633-432d-a9ab-a0eb5178f42d", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:43.461436", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Na0s/sft-ready-MuskumPillerum-General-Knowledge", "local_id": "165b5179-dcad-48ea-80e5-f7a2e54217bb", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:46.044029", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept19-general_knowledge-y_train", "local_id": "35204d4c-db7b-4c6c-8f1a-f623d41fc10a", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:47.131731", "action": "hf_dataset_downloaded", "details": {"dataset_id": "JennyHuang19/sept-19-general_knowledge-y_test", "local_id": "19ef6768-9278-4815-9a39-8796f9546442", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:51.509590", "action": "hf_dataset_downloaded", "details": {"dataset_id": "summykai/SFT-Dataset-General-Knowledge", "local_id": "f0cfa915-3b81-4266-a336-d3eef3aa56b8", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:38:59.389376", "action": "hf_datasets_searched", "details": {"query": "advice", "results": 10}}
+{"timestamp": "2025-10-10T15:39:24.251428", "action": "hf_datasets_searched", "details": {"query": "decision", "results": 10}}
+{"timestamp": "2025-10-10T15:39:40.537476", "action": "hf_datasets_searched", "details": {"query": "history", "results": 10}}
+{"timestamp": "2025-10-10T15:39:55.635135", "action": "hf_dataset_downloaded", "details": {"dataset_id": "racineai/OGC_History_Geography", "local_id": "7359459a-2d0f-473a-b6e8-be90c01804fa", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:07.101163", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Svngoku/african-history-extra-articles-2507-qa-enhanced-gpt-5-mini", "local_id": "2e04f7d7-00fc-4f98-99a1-e75aa32fc71a", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:07.720625", "action": "hf_dataset_downloaded", "details": {"dataset_id": "BashitAli/Indian_history", "local_id": "52d2da05-c47f-47eb-8715-2786c700f74e", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:09.713091", "action": "hf_dataset_downloaded", "details": {"dataset_id": "vishnu2003/history", "local_id": "47c6a3a0-19f9-4f36-bda6-cbfc3b83dc04", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:21.254282", "action": "hf_datasets_searched", "details": {"query": "geography", "results": 10}}
+{"timestamp": "2025-10-10T15:40:36.490980", "action": "hf_dataset_downloaded", "details": {"dataset_id": "SciKnowOrg/ontolearner-geography", "local_id": "f9687741-6b11-49fa-99da-7f8a6ae2435a", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:39.430110", "action": "hf_dataset_downloaded", "details": {"dataset_id": "BAAI/IndustryCorpus2_tourism_geography", "local_id": "c2812a4f-f570-4f60-bf35-bade6c5983e8", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:50.151788", "action": "hf_dataset_downloaded", "details": {"dataset_id": "joey234/mmlu-high_school_geography-neg-prepend-verbal", "local_id": "5b1ee8c5-0f07-49f1-a895-60c2f8ad3efc", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:40:59.259423", "action": "hf_datasets_searched", "details": {"query": "politics", "results": 9}}
+{"timestamp": "2025-10-10T15:41:03.548295", "action": "hf_dataset_downloaded", "details": {"dataset_id": "joey234/mmlu-high_school_government_and_politics", "local_id": "0a66b3fa-4532-43c7-b596-ff4b96382bdd", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:41:10.656230", "action": "hf_dataset_downloaded", "details": {"dataset_id": "saepark/preprocessed-politics200", "local_id": "ae615579-da90-4127-9f2c-a4dadf0a39ce", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:41:17.604475", "action": "hf_dataset_downloaded", "details": {"dataset_id": "nruigrok/local_politics", "local_id": "dab8196f-6299-492c-9f0d-7c091194e91e", "sample_size": 100}}
+{"timestamp": "2025-10-10T15:41:26.702533", "action": "hf_datasets_searched", "details": {"query": "plants", "results": 10}}
+{"timestamp": "2025-10-10T15:41:50.506430", "action": "training_started", "details": {"train_id": "ea35021a-7c00-42b1-93c0-72035bda2096", "base_model": "mlx-mistral-7b", "dataset_ids": ["f0918bdf-b81d-4fc2-abe9-e0ddd98a8c22", "dd268781-8633-432d-a9ab-a0eb5178f42d", "165b5179-dcad-48ea-80e5-f7a2e54217bb", "35204d4c-db7b-4c6c-8f1a-f623d41fc10a", "19ef6768-9278-4815-9a39-8796f9546442", "f0cfa915-3b81-4266-a336-d3eef3aa56b8", "7359459a-2d0f-473a-b6e8-be90c01804fa", "2e04f7d7-00fc-4f98-99a1-e75aa32fc71a", "52d2da05-c47f-47eb-8715-2786c700f74e", "47c6a3a0-19f9-4f36-bda6-cbfc3b83dc04", "f9687741-6b11-49fa-99da-7f8a6ae2435a", "c2812a4f-f570-4f60-bf35-bade6c5983e8", "5b1ee8c5-0f07-49f1-a895-60c2f8ad3efc", "0a66b3fa-4532-43c7-b596-ff4b96382bdd", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "dab8196f-6299-492c-9f0d-7c091194e91e"]}}
+{"timestamp": "2025-10-10T15:43:31.851210", "action": "training_completed", "details": {"talent_id": "ea35021a-7c00-42b1-93c0-72035bda2096"}}
+{"timestamp": "2025-10-10T15:43:34.557517", "action": "evaluation_completed", "details": {"eval_id": "00e2c8e6-fc64-4e42-8767-71a42db1b650", "talent_id": "ea35021a-7c00-42b1-93c0-72035bda2096", "safety_score": 0.92, "rubric_passed": true}}
+{"timestamp": "2025-10-10T15:44:00.877482", "action": "talent_published", "details": {"talent_id": "talent_1760107440866", "name": "General Knowledge 1", "category": "general"}}
+{"timestamp": "2025-10-10T15:44:01.175293", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T15:44:01.177035", "action": "talents_listed_mcp", "details": {"count": 3}}
+{"timestamp": "2025-10-10T15:44:07.474276", "action": "talent_tested_mcp", "details": {"talent_id": "talent_1760107440866"}}
+{"timestamp": "2025-10-10T22:05:30.831371", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T22:05:31.046873", "action": "talents_listed_mcp", "details": {"count": 3}}
+{"timestamp": "2025-10-10T22:19:07.426570", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-10T22:19:07.430180", "action": "talents_listed_mcp", "details": {"count": 3}}

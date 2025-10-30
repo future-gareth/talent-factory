@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Avatar Talent Manifest",
+  "description": "Schema for avatar talent manifests used by Persona Foundry",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "kind",
+    "sdx_version",
+    "base_model",
+    "lora_rank",
+    "default_weight",
+    "size_mb"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the talent",
+      "pattern": "^avatar\\.(identity|style)\\.[a-zA-Z0-9_\\.]+$",
+      "examples": [
+        "avatar.identity.dot_kairo",
+        "avatar.style.anime.mecha",
+        "avatar.style.abstract.minimal"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Presence/Avatar"],
+      "description": "Category classification for Persona Foundry"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["lora"],
+      "description": "Type of model artifact"
+    },
+    "sdx_version": {
+      "type": "string",
+      "enum": ["1.5", "xl"],
+      "description": "Stable Diffusion version"
+    },
+    "base_model": {
+      "type": "string",
+      "description": "Base model identifier",
+      "examples": [
+        "runwayml/stable-diffusion-v1-5",
+        "stabilityai/stable-diffusion-xl-base-1.0"
+      ]
+    },
+    "token": {
+      "type": "string",
+      "description": "Trigger token for identity talents",
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "examples": ["dot_kairo", "my_character"]
+    },
+    "lora_rank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 128,
+      "description": "LoRA rank used in training"
+    },
+    "default_weight": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 2.0,
+      "default": 1.0,
+      "description": "Default mixing weight for this talent"
+    },
+    "intended_mix": {
+      "type": "array",
+      "description": "List of talent IDs this is intended to be mixed with",
+      "items": {
+        "type": "string",
+        "pattern": "^avatar\\.[a-zA-Z0-9_\\.]+$"
+      },
+      "examples": [
+        ["avatar.style.anime.mecha", "avatar.style.abstract.minimal"]
+      ]
+    },
+    "negatives": {
+      "type": "string",
+      "description": "Negative prompt keywords used during training",
+      "examples": [
+        "photo, hyperrealistic, text, watermark",
+        "photo, text, watermark"
+      ]
+    },
+    "size_mb": {
+      "type": "number",
+      "minimum": 0.1,
+      "description": "Size of the talent kit in megabytes"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp"
+    },
+    "training_config": {
+      "type": "object",
+      "description": "Training configuration used",
+      "properties": {
+        "resolution": {
+          "type": "integer",
+          "minimum": 256,
+          "maximum": 1024
+        },
+        "max_train_steps": {
+          "type": "integer",
+          "minimum": 100
+        },
+        "learning_rate": {
+          "type": "number",
+          "minimum": 1e-6,
+          "maximum": 1e-2
+        },
+        "batch_size": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Human-readable description"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Searchable tags"
+        },
+        "author": {
+          "type": "string",
+          "description": "Creator information"
+        },
+        "license": {
+          "type": "string",
+          "description": "License information"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

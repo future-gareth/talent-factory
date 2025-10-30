@@ -1,0 +1,30 @@
+{
+  "id": "avatar.style.abstract",
+  "category": "Presence/Avatar",
+  "kind": "lora",
+  "sdx_version": "1.5",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "lora_rank": 16,
+  "default_weight": 1.0,
+  "negatives": "photo, text, watermark",
+  "size_mb": 0.1,
+  "created_at": "2025-10-11T22:40:22.208330",
+  "training_config": {
+    "resolution": 640,
+    "max_train_steps": 3000,
+    "learning_rate": 0.0001,
+    "batch_size": 1
+  },
+  "metadata": {
+    "description": "Abstract style LoRA for geometric, minimalist character design",
+    "tags": [
+      "style",
+      "abstract",
+      "geometric",
+      "minimalist",
+      "modern"
+    ],
+    "author": "Talent Factory",
+    "license": "Private"
+  }
+}

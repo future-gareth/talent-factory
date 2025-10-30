@@ -1,0 +1,17 @@
+{
+  "positive_prompts": [
+    "a character",
+    "high quality, detailed",
+    "best quality, masterpiece"
+  ],
+  "negative_prompts": [
+    "photo",
+    "text",
+    "watermark"
+  ],
+  "style_prompts": [
+    "anime style",
+    "digital art",
+    "character design"
+  ]
+}

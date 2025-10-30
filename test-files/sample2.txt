@@ -1,0 +1,4 @@
+This is sample text file 2.
+It contains information about neural networks.
+Neural networks are inspired by biological neural networks.
+They consist of interconnected nodes called neurons.

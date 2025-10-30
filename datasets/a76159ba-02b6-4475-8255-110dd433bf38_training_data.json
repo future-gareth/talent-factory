@@ -1,0 +1,7 @@
+[
+  {
+    "instruction": "Process this information from sample_6.txt:",
+    "input": "Sample training data point 6. This is a longer text sample that contains multiple sentences and provides more context for training. It includes various topics and demonstrates different writing styles that the model can learn from.",
+    "output": "I understand this information from sample_6.txt. It contains relevant details."
+  }
+]

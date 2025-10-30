@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+echo "Stopping Talent Factory..."
+
+# Stop the service
+systemctl stop talent-factory || true
+systemctl disable talent-factory || true
+
+# Remove nginx configuration
+rm -f /etc/nginx/sites-enabled/talentfactory
+rm -f /etc/nginx/sites-available/talentfactory
+
+# Remove avahi service
+rm -f /etc/avahi/services/talentfactory.service
+
+# Restart nginx and avahi
+systemctl restart nginx || true
+systemctl restart avahi-daemon || true
+
+exit 0

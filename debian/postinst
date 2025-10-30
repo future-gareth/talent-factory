@@ -1,0 +1,106 @@
+#!/bin/bash
+set -e
+
+echo "Setting up Talent Factory..."
+
+# Create talent-factory user if it doesn't exist
+if ! id "talentfactory" &>/dev/null; then
+    useradd -r -s /bin/false -d /opt/talent-factory talentfactory
+fi
+
+# Set up directories
+mkdir -p /opt/talent-factory/{backend,ui,models,datasets,logs,certs,avahi}
+chown -R talentfactory:talentfactory /opt/talent-factory
+
+# Install Python dependencies
+cd /opt/talent-factory/backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Generate self-signed SSL certificates
+if [ ! -f /opt/talent-factory/certs/talentfactory.local.crt ]; then
+    openssl req -x509 -newkey rsa:4096 -keyout /opt/talent-factory/certs/talentfactory.local.key \
+        -out /opt/talent-factory/certs/talentfactory.local.crt -days 365 -nodes \
+        -subj "/C=US/ST=State/L=City/O=Organization/CN=talentfactory.local"
+    chown talentfactory:talentfactory /opt/talent-factory/certs/*
+fi
+
+# Configure nginx
+cat > /etc/nginx/sites-available/talentfactory << 'EOF'
+server {
+    listen 80;
+    server_name talentfactory.local;
+    
+    location / {
+        proxy_pass http://localhost:3004;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+    
+    location /api {
+        proxy_pass http://localhost:8084;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+    
+    location /ws {
+        proxy_pass http://localhost:8084;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+EOF
+
+# Enable nginx site
+ln -sf /etc/nginx/sites-available/talentfactory /etc/nginx/sites-enabled/
+rm -f /etc/nginx/sites-enabled/default
+
+# Configure avahi for mDNS
+cat > /etc/avahi/services/talentfactory.service << 'EOF'
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">Talent Factory on %h</name>
+  <service>
+    <type>_http._tcp</type>
+    <port>80</port>
+    <txt-record>path=/</txt-record>
+    <txt-record>version=1.0.0</txt-record>
+    <txt-record>service=talent-factory</txt-record>
+  </service>
+  <service>
+    <type>_mcp._tcp</type>
+    <port>80</port>
+    <txt-record>path=/mcp</txt-record>
+    <txt-record>version=1.0.0</txt-record>
+    <txt-record>service=talent-catalogue</txt-record>
+  </service>
+</service-group>
+EOF
+
+# Copy systemd service file
+cp /opt/talent-factory/talent-factory.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable talent-factory
+systemctl start talent-factory
+
+# Restart nginx and avahi
+systemctl restart nginx
+systemctl restart avahi-daemon
+
+echo ""
+echo "Talent Factory is running."
+echo "Access at: http://talentfactory.local"
+echo ""
+echo "To check status: systemctl status talent-factory"
+echo "To view logs: journalctl -u talent-factory -f"
+echo ""
+
+exit 0

@@ -1,0 +1,10 @@
+{
+  "talent_id": "2b9ae956-1004-4a8c-8c7c-82c56c6ec410",
+  "base_model": "llama-2-7b",
+  "training_examples": 1,
+  "trained_at": "2025-10-09T18:20:45.596136",
+  "parameters": {
+    "outcome_preference": "balanced"
+  },
+  "model_path": "/Users/gareth/Code/garethapi/tools/talent-factory/datasets/2b9ae956-1004-4a8c-8c7c-82c56c6ec410_trained_model.json"
+}

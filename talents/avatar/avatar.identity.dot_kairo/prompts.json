@@ -1,0 +1,18 @@
+{
+  "positive_prompts": [
+    "a dot_kairo",
+    "high quality, detailed",
+    "best quality, masterpiece"
+  ],
+  "negative_prompts": [
+    "photo",
+    "hyperrealistic",
+    "text",
+    "watermark"
+  ],
+  "style_prompts": [
+    "anime style",
+    "digital art",
+    "character design"
+  ]
+}

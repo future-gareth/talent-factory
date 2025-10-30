@@ -1,0 +1,122 @@
+[
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "# Dot Home \u2014 Shopping List for Pilot Units (RTX 3060 standard) \u2014 v2",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "Three configurations you can buy today. All will run Dot\u2019s **Talents** fully **on\u2011device** with an **RTX 3060 12 GB**.  \nThis version replaces the **Power Train P40** with **Lian Li A3 mATX** (similar price once VAT/import is counted).",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Option A \u2014 Quiet SFF in **Fractal Mood** (mini\u2011ITX, lounge\u2011friendly)",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Buy these:**",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Summarize the following content from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "- [ ] **Case** \u2014 Fractal **Mood** (Black or Light Grey) \u2014 *PCIe 4.0 riser included; top 180 mm fan; CPU cooler \u2264 **114 mm**; GPU \u2264 **325 mm** length; GPU thickness \u2264 **60 mm***  \n- [ ] **Motherboard (mini\u2011ITX, AM5)** \u2014 Gigabyte **B650I AORUS Ultra** *(Wi\u2011Fi 6E)* **or** ASUS **ROG Strix X870\u2011I Gaming WiFi** *(Wi\u2011Fi 7/USB4)*  \n- [ ] **CPU (65 W)** \u2014 AMD **Ryzen 7 7700** *(8C/16T)* **or** AMD **Ryzen 5 7600** *(6C/12T)*  \n- [ ] **CPU Cooler (low\u2011profile)** \u2014 **Noctua NH\u2011L12S** *(70 mm)* **or** **ID...",
+    "output": "This content is from Dot_Home_Shopping_List_A3_Revised.md and contains detailed information."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Fit notes:** CPU cooler \u2264 **114 mm**; GPU \u2264 **325 mm** long and **\u2264 60 mm** thick (\u2264 **58 mm** with rear dust filter). PSU must be **SFX/SFX\u2011L \u2264 130 mm**. Set GPU slot to **Gen4** in BIOS (riser is Gen4).",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Target subtotal (ex\u2011GPU):** ~**\u00a31,050** new retail.  \n**GPU (used 3060 12 GB):** ~**\u00a3180\u2013\u00a3200** \u2192 **Total:** **~\u00a31,230**.",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Option B \u2014 Cheapest Reliable **Airflow mATX** (budget tower)",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Buy these:**",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Summarize the following content from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "- [ ] **Case (mATX)** \u2014 **Deepcool CH370** *(GPU \u2264 **378 mm**, CPU cooler \u2264 **165 mm**, ATX PSU \u2264 **160 mm**)*  \n      \u2014or\u2014 **Montech X3 Mesh** *(GPU \u2264 **305 mm**, CPU cooler \u2264 **160 mm**, ATX PSU \u2264 **160 mm**)*  \n- [ ] **Motherboard (AM4, mATX)** \u2014 **MSI B550M PRO\u2011VDH WiFi** **or** **Gigabyte B550M DS3H**  \n- [ ] **CPU (65 W)** \u2014 AMD **Ryzen 5 5600** *(6C/12T)*  \n- [ ] **CPU Cooler (120 mm tower)** \u2014 **Thermalright Peerless Assassin 120 SE** *(~155 mm tall)* \u2014or\u2014 use the boxed Wraith (noisier) ...",
+    "output": "This content is from Dot_Home_Shopping_List_A3_Revised.md and contains detailed information."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Target subtotal (incl. used GPU):** **~\u00a3680\u2013\u00a3720** (used/private\u2011seller heavy mix).",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Option C \u2014 **Lian Li A3 mATX** (compact premium tower, replaces P40)",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Why this option:** similar total cost to P40 once VAT/import is included, but with **better build quality, modular PSU mount (ATX/SFX), dust filters and documented airflow**. Still compact (\u224826 L), but far easier to cool quietly than tiny ITX cubes.",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Key case specs:** GPU up to **~415 mm** (varies with PSU placement); CPU cooler **\u2264 165\u2013167 mm**; supports **ATX/SFX/SFX\u2011L** PSUs; **no fans included**.",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Summarize the following content from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Buy these (pairings):**\n- [ ] **Case:** **Lian Li A3 mATX** (black/wood edition options) \u2014 target **~\u00a370\u2013\u00a390** retail  \n- [ ] **Motherboard (AM4, mATX)** \u2014 **MSI B550M PRO\u2011VDH WiFi** **or** **Gigabyte B550M DS3H** \u2014 ~**\u00a395\u2013\u00a3150** used/refurb  \n- [ ] **CPU:** **Ryzen 5 5600** \u2014 ~**\u00a380\u2013\u00a3110** used (or **Ryzen 5 7600** on AM5 if you want DDR5)  \n- [ ] **Cooler:** **Thermalright Peerless/Phantom Spirit 120** (~155 mm) \u2014 ~**\u00a325\u2013\u00a335** used (or Wraith to save \u00a3)  \n- [ ] **GPU:** **RTX 3060 12 GB** (A...",
+    "output": "This content is from Dot_Home_Shopping_List_A3_Revised.md and contains detailed information."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Airflow plan (air only):**\n- **Top:** 3\u00d7120 mm **exhaust**  \n- **Bottom:** 2\u20133\u00d7120 mm **intake**  \n- **Rear:** 1\u00d7120 mm **exhaust**  \n- **Side (optional):** 1\u20132\u00d7120 mm **intake** aimed at GPU if needed",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "**Estimated total (typical private\u2011seller mix):**  \n- With nice tower cooler & 5 fans: **~\u00a3700\u2013\u00a3780**  \n- With Wraith & minimal fans: **~\u00a3660\u2013\u00a3710**",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Common setup pack (all builds)",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "- [ ] **OS USB** \u2014 16 GB USB drive (Windows 11 Pro or Ubuntu LTS)  \n- [ ] **Ethernet cable** (recommended for first\u2011run)  \n- [ ] **Peripherals for setup** \u2014 USB keyboard + monitor/HDMI/DP cable  \n- [ ] **First\u2011run card** \u2014 Wi\u2011Fi, admin login, voice phrase: \u201c*Install the Birdwatching talent kit*\u201d",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Quick BIOS checklist",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "- [ ] Enable **EXPO** (DDR5\u20116000) on AM5 / **XMP** or manual 3200/3600 on AM4  \n- [ ] Set PEG slot to **Gen4** (Fractal Mood riser)  \n- [ ] Enable **Resizable BAR**  \n- [ ] Fan curves: Quiet profile; top/front fans ~35\u201340% until 60\u202f\u00b0C",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "## Quiet\u2011tuning (optional)",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "- RTX 3060 power cap to **~170 W**  \n  - Linux: `sudo nvidia-smi -pl 170`  \n  - Windows: Afterburner \u2192 Power Limit **85\u201390%**, slight undervolt",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Dot_Home_Shopping_List_A3_Revised.md:",
+    "input": "### Notes\n- Swap any brand for an equivalent **that matches the dimensions and power limits** above.  \n- For the Mood case, stick to **true 2\u2011slot** or **~2.2\u2011slot** RTX 3060 cards to maintain airflow.",
+    "output": "I understand this information from Dot_Home_Shopping_List_A3_Revised.md. It contains relevant details."
+  }
+]

@@ -1,0 +1,18 @@
+# Avatar Style Training Config - Anime Mecha
+id: avatar.style.anime.mecha
+kind: lora
+sdx_version: "1.5"
+base_model: runwayml/stable-diffusion-v1-5
+train_data_dir: /data/avatar/style/anime_mecha/images
+resolution: 640
+lora_rank: 16
+max_train_steps: 3000
+learning_rate: 1e-4
+batch_size: 1
+negatives: "photo, text, watermark"
+
+# Optional metadata
+description: "Anime mecha style LoRA for character design"
+tags: ["style", "anime", "mecha", "character"]
+author: "Talent Factory"
+license: "Private"

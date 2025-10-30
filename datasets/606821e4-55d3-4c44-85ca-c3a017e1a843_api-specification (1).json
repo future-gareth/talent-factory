@@ -1,0 +1,231 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Design for MachinePay KYB-as-a-Service",
+    "description": "**API Design for MachinePay KYB-as-a-Service**\n\n**Overview**: A RESTful API that automates business verification (KYB) across jurisdictions, processing documents and validating business information.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/businesses**": {
+      "post": {
+        "tags": [
+          "Business"
+        ],
+        "summary": "Create item",
+        "description": "Perform post operation on /businesses**",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/businesses/{id}/status**": {
+      "get": {
+        "tags": [
+          "Business"
+        ],
+        "summary": "Check status",
+        "description": "Perform get operation on /businesses/{id}/status**",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The id identifier"
+          }
+        ]
+      }
+    },
+    "/businesses/{id}/documents**": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Upload document",
+        "description": "Upload supporting documents",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The id identifier"
+          }
+        ]
+      }
+    },
+    "/businesses/{id}/results**": {
+      "get": {
+        "tags": [
+          "Business"
+        ],
+        "summary": "Get results",
+        "description": "Perform get operation on /businesses/{id}/results**",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The id identifier"
+          }
+        ]
+      }
+    },
+    "/jurisdictions**": {
+      "get": {
+        "tags": [
+          "Jurisdictions"
+        ],
+        "summary": "Get item",
+        "description": "List supported jurisdictions",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/businesses/{id}/reverify**": {
+      "post": {
+        "tags": [
+          "Business"
+        ],
+        "summary": "Create item",
+        "description": "Perform post operation on /businesses/{id}/reverify**",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The id identifier"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "lora_weights": {
+    "weight_a": "simulated_lora_weight_a",
+    "weight_b": "simulated_lora_weight_b",
+    "alpha": 16,
+    "rank": 8
+  },
+  "base_model": "mlx-community/Mistral-7B-v0.1-4bit",
+  "training_data": 400
+}

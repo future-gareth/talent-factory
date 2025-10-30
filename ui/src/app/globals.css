@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Neuton:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* MCP Designer Color Palette */
+    --background: 248 249 250; /* Light gray */
+    --foreground: 0 0 0; /* Black text */
+    --card: 255 255 255; /* White cards */
+    --card-foreground: 0 0 0;
+    --popover: 255 255 255;
+    --popover-foreground: 0 0 0;
+    --primary: 100 0 255; /* Purple */
+    --primary-foreground: 255 255 255;
+    --secondary: 248 249 250;
+    --secondary-foreground: 0 0 0;
+    --muted: 248 249 250;
+    --muted-foreground: 107 114 128;
+    --accent: 248 249 250;
+    --accent-foreground: 0 0 0;
+    --destructive: 198 28 0; /* Red */
+    --destructive-foreground: 255 255 255;
+    --border: 230 225 219; /* Light gray border */
+    --input: 230 225 219;
+    --ring: 100 0 255;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+    --primary: 100 0 255;
+    --primary-foreground: 255 255 255;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 51 65 85;
+    --accent-foreground: 248 250 252;
+    --destructive: 198 28 0;
+    --destructive-foreground: 255 255 255;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 100 0 255;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Neuton', Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: #6400FF !important;
+    font-weight: 600;
+  }
+  
+  /* MCP Designer Style Components */
+  .gapi-heading {
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif !important;
+    color: #6400FF !important;
+    font-weight: 600 !important;
+  }
+  
+  .gapi-body {
+    font-family: 'Neuton', Georgia, 'Times New Roman', serif !important;
+    color: #000000 !important; /* Ensure black text on light backgrounds */
+  }
+  
+  .panel {
+    background: #ffffff !important; /* Force white background */
+    border: 1px solid #e6e1db !important;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+    box-shadow: 0 5px 18px rgba(0,0,0,.04);
+  }
+  
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #6400FF;
+  }
+  
+  .panel-header h3 {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: #6400FF !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+/* Override Tailwind classes to ensure proper colors */
+@layer utilities {
+  .bg-background {
+    background-color: #f8f9fa !important;
+  }
+  
+  .bg-card {
+    background-color: #ffffff !important;
+  }
+  
+  .text-foreground {
+    color: #000000 !important;
+  }
+  
+  .text-muted-foreground {
+    color: #6b7280 !important;
+  }
+  
+  .text-primary {
+    color: #6400FF !important;
+  }
+  
+  .border-border {
+    border-color: #e6e1db !important;
+  }
+  
+  /* Specific heading overrides */
+  h1.gapi-heading,
+  h2.gapi-heading,
+  h3.gapi-heading,
+  h4.gapi-heading,
+  h5.gapi-heading,
+  h6.gapi-heading {
+    color: #6400FF !important;
+  }
+  
+  /* Force all headings to be purple */
+  h1, h2, h3, h4, h5, h6 {
+    color: #6400FF !important;
+  }
+  
+  .text-primary {
+    color: #6400FF !important;
+  }
+}

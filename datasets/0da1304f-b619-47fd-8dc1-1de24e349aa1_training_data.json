@@ -1,0 +1,32 @@
+[
+  {
+    "instruction": "Process this information from sample1.txt:",
+    "input": "This is sample text file 1.\nIt contains some basic information about machine learning.\nMachine learning is a subset of artificial intelligence.",
+    "output": "I understand this information from sample1.txt. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from sample2.txt:",
+    "input": "This is sample text file 2.\nIt contains information about neural networks.\nNeural networks are inspired by biological neural networks.\nThey consist of interconnected nodes called neurons.",
+    "output": "I understand this information from sample2.txt. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from sample.md:",
+    "input": "# Sample Markdown File",
+    "output": "I understand this information from sample.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from sample.md:",
+    "input": "This is a **markdown** file with some formatting.",
+    "output": "I understand this information from sample.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from sample.md:",
+    "input": "## Features\n- Lists\n- **Bold text**\n- *Italic text*",
+    "output": "I understand this information from sample.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from sample.md:",
+    "input": "## Code Example\n```python\ndef hello_world():\n    print(\"Hello, World!\")\n```",
+    "output": "I understand this information from sample.md. It contains relevant details."
+  }
+]

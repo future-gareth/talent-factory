@@ -1,0 +1,21 @@
+Package: talent-factory
+Version: 1.0.0
+Section: misc
+Priority: optional
+Architecture: amd64
+Depends: python3 (>= 3.8), python3-pip, nginx, avahi-daemon, openssl, curl, wget
+Maintainer: GarethAPI Team <team@garethapi.com>
+Description: Talent Factory - Your Local AI Workshop
+ Talent Factory is a local AI workshop for creating, evaluating, and publishing
+ fine-tuned models (Talents) that Dots can later use. It runs as a LAN-accessible
+ service with a full visual UI, exposing an MCP Talent Catalogue for integration
+ with Dot Home.
+ .
+ Features:
+  - Visual fine-tuning with no CLI required
+  - Hardware auto-detection and model filtering
+  - Data preparation with PII masking
+  - Real-time training progress monitoring
+  - Safety evaluation and rubric assessment
+  - MCP integration for Dot Home discovery
+  - Local-first security with audit trail

@@ -1,0 +1,18 @@
+# Avatar Style Training Config - Abstract
+id: avatar.style.abstract
+kind: lora
+sdx_version: "1.5"
+base_model: runwayml/stable-diffusion-v1-5
+train_data_dir: /data/avatar/style/abstract/images
+resolution: 640
+lora_rank: 16
+max_train_steps: 3000
+learning_rate: 1e-4
+batch_size: 1
+negatives: "photo, text, watermark"
+
+# Optional metadata
+description: "Abstract style LoRA for geometric, minimalist character design"
+tags: ["style", "abstract", "geometric", "minimalist", "modern"]
+author: "Talent Factory"
+license: "Private"

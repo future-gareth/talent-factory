@@ -1,0 +1,7 @@
+{
+  "backend": "mlx",
+  "model": "Llama 7B (MLX)",
+  "training_examples": 300,
+  "created_at": "2024-01-01T00:00:00Z",
+  "mlx_version": "0.8.0"
+}

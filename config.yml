@@ -1,0 +1,156 @@
+# Talent Factory Configuration
+
+# Service Configuration
+service:
+  name: "Talent Factory"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 8084
+  ui_port: 3004
+
+# Storage Configuration
+storage:
+  base_dir: "/opt/talent-factory"
+  models_dir: "models"
+  datasets_dir: "datasets"
+  logs_dir: "logs"
+  certs_dir: "certs"
+
+# Security Configuration
+security:
+  local_only: true
+  allowed_networks:
+    - "192.168.0.0/16"
+    - "10.0.0.0/8"
+    - "172.16.0.0/12"
+  block_external: true
+  require_auth: false
+  audit_enabled: true
+  pii_detection: true
+  data_retention_days: 30
+
+# Training Configuration
+training:
+  default_outcome_preference: "balanced"
+  max_concurrent_training: 1
+  training_timeout_hours: 24
+  evaluation_timeout_minutes: 30
+  
+  # Outcome preferences
+  preferences:
+    speed:
+      epochs: 2
+      batch_size: 2
+      learning_rate: 0.001
+      gradient_accumulation: 2
+    balanced:
+      epochs: 3
+      batch_size: 1
+      learning_rate: 0.0005
+      gradient_accumulation: 4
+    quality:
+      epochs: 5
+      batch_size: 1
+      learning_rate: 0.0001
+      gradient_accumulation: 8
+
+# Model Configuration
+models:
+  cache_dir: "models/cache"
+  max_model_size_gb: 50
+  supported_formats: ["safetensors", "bin"]
+  
+  # Default models
+  default_models:
+    - id: "llama-2-7b"
+      name: "meta-llama/Llama-2-7b-hf"
+      size_gb: 13.5
+      min_vram_gb: 8
+    - id: "mistral-7b"
+      name: "mistralai/Mistral-7B-v0.1"
+      size_gb: 14.5
+      min_vram_gb: 8
+    - id: "codellama-7b"
+      name: "codellama/CodeLlama-7b-hf"
+      size_gb: 13.5
+      min_vram_gb: 8
+
+# Dataset Configuration
+datasets:
+  max_file_size_mb: 100
+  supported_formats: ["json", "csv", "txt"]
+  min_samples: 10
+  max_samples: 100000
+  train_split: 0.8
+  val_split: 0.2
+
+# MCP Configuration
+mcp:
+  enabled: true
+  discovery_name: "Talent Factory"
+  service_type: "talent_catalogue"
+  endpoints:
+    - "/mcp/talents"
+    - "/mcp/talents/{id}"
+    - "/mcp/talents/{id}/test"
+    - "/mcp/discovery"
+  capabilities:
+    - "talent_discovery"
+    - "talent_testing"
+    - "model_inference"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation: true
+  max_file_size_mb: 10
+  backup_count: 5
+  
+  # Log types
+  audit_log: true
+  training_log: true
+  error_log: true
+  access_log: true
+
+# Network Configuration
+network:
+  hostname: "talentfactory.local"
+  mDNS_enabled: true
+  ssl_enabled: false
+  ssl_cert_path: "certs/talentfactory.local.crt"
+  ssl_key_path: "certs/talentfactory.local.key"
+  
+  # Firewall rules
+  firewall:
+    allow_local: true
+    allow_lan: true
+    block_external: true
+
+# Performance Configuration
+performance:
+  max_workers: 4
+  max_memory_gb: 16
+  gpu_memory_fraction: 0.8
+  enable_mixed_precision: true
+  enable_gradient_checkpointing: true
+  
+  # Caching
+  cache:
+    enabled: true
+    max_size_mb: 1000
+    ttl_seconds: 3600
+
+# Monitoring Configuration
+monitoring:
+  enabled: true
+  metrics_endpoint: "/metrics"
+  health_check_interval: 30
+  resource_monitoring: true
+  
+  # Alerts
+  alerts:
+    high_memory_usage: 0.9
+    high_cpu_usage: 0.8
+    disk_space_low: 0.1
+    training_failure: true

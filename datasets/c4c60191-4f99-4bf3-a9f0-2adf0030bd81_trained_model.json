@@ -1,0 +1,12 @@
+{
+  "talent_id": "c4c60191-4f99-4bf3-a9f0-2adf0030bd81",
+  "base_model": "mistral-7b",
+  "training_examples": 201,
+  "trained_at": "2025-10-09T18:11:37.103149",
+  "parameters": {
+    "outcome_preference": "balanced",
+    "epochs": 5,
+    "learning_rate": 0.0005
+  },
+  "model_path": "/Users/gareth/Code/garethapi/tools/talent-factory/datasets/c4c60191-4f99-4bf3-a9f0-2adf0030bd81_trained_model.json"
+}

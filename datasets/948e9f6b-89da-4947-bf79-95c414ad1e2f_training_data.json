@@ -1,0 +1,147 @@
+[
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "# Instructions for Admin UI Layer Status Logic (for Cursor)",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "This document provides the logic and structure needed to implement accurate layer status detection in the Admin UI.",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "## \ud83e\udde9 Purpose",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Cursor should **not** attempt to infer layer status from component health alone. Instead, it should follow a clear 3-step logic to determine:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "1. Whether the **Layer is deployed**\n2. Whether the **Layer is running**\n3. The **Component health** only if the above two are true",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "## \u2705 Step-by-Step Status Logic",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "### 1. **Layer Deployment Registry**",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Create or connect to a service that tracks whether each Layer is deployed.",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "- If using Kubernetes: check for Deployments or Helm chart presence\n- If using Docker Compose: parse from config or `docker ps`\n- If static: maintain a manifest JSON like:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "```json\n{\n  \"Layer00\": true,\n  \"Layer01\": true,\n  \"Layer02\": false\n}\n```",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "### 2. **Runtime Status**",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Query whether the Layer is currently running as a process/container/pod.",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "- Kubernetes: use `kubectl get pods` or Kubernetes API\n- Docker: use `docker ps` or container inspect\n- Systemd: use `systemctl is-active`",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Store or expose via an API:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "```json\n{\n  \"Layer00\": \"running\",\n  \"Layer01\": \"stopped\",\n  \"Layer02\": \"starting\"\n}\n```",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "### 3. **Component Health (Optional, if Layer is Running)**",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Only check health endpoints of components if the Layer is deployed **and** running.",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "```json\n{\n  \"studio-backend\": \"healthy\",\n  \"admin-ui\": \"inactive\"\n}\n```",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "## \ud83d\udd01 Real-Time Option",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "To update the Admin UI dynamically:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "- Use Docker or K8s event streams\n- Push updates via WebSocket or Server-Sent Events\n- Or fall back to polling every X seconds",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "## \ud83d\udee0 Suggested Final Output Format",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Expose from a single backend API like:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "```http\nGET /layers/status\n```",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "```json\n{\n  \"Layer00\": {\n    \"exists\": true,\n    \"running\": true,\n    \"components\": {\n      \"client-admin-ui\": \"inactive\",\n      \"tenant-management\": \"active\"\n    }\n  },\n  \"Layer03\": {\n    \"exists\": false\n  }\n}\n```",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "## \u2705 Summary",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "Avoid guessing status from health checks. Instead:",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "1. Confirm deployment\n2. Check runtime state\n3. THEN check component health",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  },
+  {
+    "instruction": "Process this information from Admin_UI_Layer_Status_Instructions.md:",
+    "input": "This ensures Cursor and the Admin UI remain aligned with real system state.",
+    "output": "I understand this information from Admin_UI_Layer_Status_Instructions.md. It contains relevant details."
+  }
+]

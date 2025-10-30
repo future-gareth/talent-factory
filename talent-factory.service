@@ -1,0 +1,37 @@
+[Unit]
+Description=Talent Factory - Local AI Workshop
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=talentfactory
+Group=talentfactory
+WorkingDirectory=/opt/talent-factory
+ExecStart=/opt/talent-factory/backend/venv/bin/python3 /opt/talent-factory/backend/main.py
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=talent-factory
+
+# Environment variables
+Environment=PORT=8084
+Environment=PYTHONPATH=/opt/talent-factory/backend
+Environment=TF_BASE_DIR=/opt/talent-factory
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/talent-factory
+CapabilityBoundingSet=
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

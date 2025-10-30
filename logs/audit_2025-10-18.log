@@ -1,0 +1,55 @@
+{"timestamp": "2025-10-18T10:45:04.291314", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T10:45:16.684217", "action": "training_started", "details": {"train_id": "aada73b0-3707-49c6-8bb3-df4bcd27bb32", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e"]}}
+{"timestamp": "2025-10-18T10:45:27.416964", "action": "training_completed", "details": {"talent_id": "aada73b0-3707-49c6-8bb3-df4bcd27bb32"}}
+{"timestamp": "2025-10-18T10:48:46.652523", "action": "training_started", "details": {"train_id": "e5cc5372-8608-472f-99c8-c02146797745", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e"]}}
+{"timestamp": "2025-10-18T10:48:57.067297", "action": "training_completed", "details": {"talent_id": "e5cc5372-8608-472f-99c8-c02146797745"}}
+{"timestamp": "2025-10-18T10:52:35.965225", "action": "talents_listed_mcp", "details": {"count": 3}}
+{"timestamp": "2025-10-18T10:52:36.293438", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T10:55:29.427603", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T10:55:29.430005", "action": "talents_listed_mcp", "details": {"count": 3}}
+{"timestamp": "2025-10-18T11:01:49.328843", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:01:49.332107", "action": "talents_listed_mcp", "details": {"count": 3}}
+{"timestamp": "2025-10-18T11:02:09.605748", "action": "training_started", "details": {"train_id": "4b2a4af6-f408-4803-9c1c-91dfbb271146", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd", "7359459a-2d0f-473a-b6e8-be90c01804fa"]}}
+{"timestamp": "2025-10-18T11:03:51.167142", "action": "training_completed", "details": {"talent_id": "4b2a4af6-f408-4803-9c1c-91dfbb271146"}}
+{"timestamp": "2025-10-18T11:03:53.925497", "action": "evaluation_completed", "details": {"eval_id": "64b36435-25bf-492c-9fc5-e768e13ec7fc", "talent_id": "4b2a4af6-f408-4803-9c1c-91dfbb271146", "safety_score": 0.92, "rubric_passed": true}}
+{"timestamp": "2025-10-18T11:04:15.632531", "action": "talent_published", "details": {"talent_id": "talent_1760781855623", "name": "Test 1", "category": "general"}}
+{"timestamp": "2025-10-18T11:04:16.006569", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:04:16.008610", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:04:23.286456", "action": "talent_tested_mcp", "details": {"talent_id": "talent_1760781855623"}}
+{"timestamp": "2025-10-18T11:17:23.216335", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:17:23.221129", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:21:04.213556", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:21:04.216659", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:22:35.000204", "action": "training_started", "details": {"train_id": "1c107793-bcfc-4988-abc5-f9c47bb0714d", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd"]}}
+{"timestamp": "2025-10-18T11:24:06.558109", "action": "training_completed", "details": {"talent_id": "1c107793-bcfc-4988-abc5-f9c47bb0714d"}}
+{"timestamp": "2025-10-18T11:24:07.410822", "action": "evaluation_completed", "details": {"eval_id": "58268bb8-7da9-463f-b317-d7822d1ceceb", "talent_id": "1c107793-bcfc-4988-abc5-f9c47bb0714d", "safety_score": 0.92, "rubric_passed": true}}
+{"timestamp": "2025-10-18T11:26:15.443320", "action": "training_started", "details": {"train_id": "8f67537c-e707-455e-ae58-8da2d00b8b52", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e"]}}
+{"timestamp": "2025-10-18T11:27:46.281730", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:27:46.283911", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:28:11.375972", "action": "training_started", "details": {"train_id": "dfa25311-6ba3-46ed-bc27-8042d85008dd", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd", "47c6a3a0-19f9-4f36-bda6-cbfc3b83dc04", "7359459a-2d0f-473a-b6e8-be90c01804fa"]}}
+{"timestamp": "2025-10-18T11:54:50.966674", "action": "models_listed", "details": {"count": 6}}
+{"timestamp": "2025-10-18T11:54:50.971553", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:55:54.950936", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:56:17.372014", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T11:56:17.374372", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T11:56:35.295740", "action": "training_started", "details": {"train_id": "97b22e84-5326-4c12-919d-6acb63eb3de6", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd"]}}
+{"timestamp": "2025-10-18T12:11:37.174590", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T12:11:37.177741", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T12:11:53.528733", "action": "training_started", "details": {"train_id": "7a9bba1f-311e-430b-89bd-5695f53e13e1", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd", "7359459a-2d0f-473a-b6e8-be90c01804fa"]}}
+{"timestamp": "2025-10-18T12:14:05.208886", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T12:14:05.212237", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T12:14:10.072239", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T12:14:10.074257", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T12:36:05.671196", "action": "training_started", "details": {"train_id": "9db082db-e253-4fa7-8b1c-e5077a25836d", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd"]}}
+{"timestamp": "2025-10-18T12:41:16.968169", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:01:47.766494", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T22:01:48.024625", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:02:34.975804", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:02:34.979421", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T22:04:10.729384", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:04:10.733033", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T22:04:27.117885", "action": "training_started", "details": {"train_id": "8a550e80-8a4e-4543-b718-021f296338a4", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd"]}}
+{"timestamp": "2025-10-18T22:07:09.312394", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:25:39.590130", "action": "models_listed", "details": {"count": 8}}
+{"timestamp": "2025-10-18T22:25:39.592981", "action": "talents_listed_mcp", "details": {"count": 4}}
+{"timestamp": "2025-10-18T22:26:03.450806", "action": "training_started", "details": {"train_id": "e8fb1267-09c8-47ba-a549-cd5677f6998f", "base_model": "mlx-mistral-7b", "dataset_ids": ["dab8196f-6299-492c-9f0d-7c091194e91e", "ae615579-da90-4127-9f2c-a4dadf0a39ce", "0a66b3fa-4532-43c7-b596-ff4b96382bdd"]}}

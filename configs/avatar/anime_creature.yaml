@@ -1,0 +1,18 @@
+# Avatar Style Training Config - Anime Creature
+id: avatar.style.anime.creature
+kind: lora
+sdx_version: "1.5"
+base_model: runwayml/stable-diffusion-v1-5
+train_data_dir: /data/avatar/style/anime_creature/images
+resolution: 640
+lora_rank: 16
+max_train_steps: 3000
+learning_rate: 1e-4
+batch_size: 1
+negatives: "photo, text, watermark"
+
+# Optional metadata
+description: "Anime creature style LoRA for organic, fantastical character design"
+tags: ["style", "anime", "creature", "fantasy", "organic"]
+author: "Talent Factory"
+license: "Private"

@@ -1,0 +1,7 @@
+[
+  {
+    "instruction": "Process this information from sample1.txt:",
+    "input": "This is sample text file 1.\nIt contains some basic information about machine learning.\nMachine learning is a subset of artificial intelligence.",
+    "output": "I understand this information from sample1.txt. It contains relevant details."
+  }
+]

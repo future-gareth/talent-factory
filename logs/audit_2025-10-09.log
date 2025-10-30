@@ -1,0 +1,152 @@
+{"timestamp": "2025-10-09T16:28:12.494790", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:28:12.495693", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:30:19.073313", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:30:19.075107", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:33:13.907603", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:33:13.912587", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:35:20.236293", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:35:20.237697", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:15.941444", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:15.947145", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.052262", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.053377", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.652134", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.652846", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.856104", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:37:28.856743", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:40:23.361656", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:40:23.366732", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:48:04.861884", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:48:04.863037", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:48:59.661820", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:48:59.662593", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:50:18.531618", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:50:18.532643", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:51:01.285312", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:51:23.643578", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T16:51:39.527128", "action": "models_listed", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:00:26.410797", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:00:45.889052", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:00:48.765488", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:00:48.766311", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:06:02.740398", "action": "dataset_ingested", "details": {"dataset_id": "756b7980-5cfb-435e-8b35-78456f3471d5", "filename": "futurematic_jira_synthetic_data.csv", "rows": 531, "has_pii": true}}
+{"timestamp": "2025-10-09T17:07:06.213238", "action": "dataset_ingested", "details": {"dataset_id": "b59f9764-ecdf-4b74-8854-7b62a516d941", "filename": "StarlingStatement_30-04-2023_30-04-2024.csv", "rows": 29, "has_pii": false}}
+{"timestamp": "2025-10-09T17:12:34.522231", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:12:34.523570", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:13:00.494893", "action": "dataset_ingested_multiple", "details": {"dataset_id": "a45722c0-8eb9-400f-9fcf-e84c47d0750e", "file_count": 1, "total_rows": 24, "files": ["Dot_Home_Shopping_List_A3_Revised.md"]}}
+{"timestamp": "2025-10-09T17:13:15.422636", "action": "dataset_ingested_multiple", "details": {"dataset_id": "606821e4-55d3-4c44-85ca-c3a017e1a843", "file_count": 1, "total_rows": 1, "files": ["api-specification (1).json"]}}
+{"timestamp": "2025-10-09T17:16:27.054801", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:16:27.056524", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:16:42.452085", "action": "dataset_ingested_multiple", "details": {"dataset_id": "0da1304f-b619-47fd-8dc1-1de24e349aa1", "file_count": 3, "total_rows": 6, "files": ["sample1.txt", "sample2.txt", "sample.md"]}}
+{"timestamp": "2025-10-09T17:17:11.840560", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:17:11.843122", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:17:26.447545", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:17:26.449301", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:17:27.325993", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:17:27.327449", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:26:10.713427", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:26:10.716397", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:26:10.721733", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:26:10.723610", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:27:40.982588", "action": "dataset_ingested_single", "details": {"dataset_id": "22218314-037b-40bf-9517-51c4deb4771c", "filename": "sample1.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T17:27:46.783078", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:27:46.784167", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:29:17.735978", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:29:17.739470", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:29:17.744246", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:29:17.745081", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:30:21.641403", "action": "hf_datasets_searched", "details": {"query": "medical", "results": 5}}
+{"timestamp": "2025-10-09T17:30:28.798126", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:30:28.800002", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:30:50.009299", "action": "hf_datasets_searched", "details": {"query": "photo", "results": 9}}
+{"timestamp": "2025-10-09T17:31:07.528802", "action": "hf_datasets_searched", "details": {"query": "writing", "results": 10}}
+{"timestamp": "2025-10-09T17:33:16.143589", "action": "dataset_ingested_single", "details": {"dataset_id": "948e9f6b-89da-4947-bf79-95c414ad1e2f", "filename": "Admin_UI_Layer_Status_Instructions.md", "rows": 29, "has_pii": false}}
+{"timestamp": "2025-10-09T17:36:26.259297", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T17:36:26.274948", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T17:36:47.102314", "action": "hf_datasets_searched", "details": {"query": "cars", "results": 10}}
+{"timestamp": "2025-10-09T17:37:27.889998", "action": "hf_datasets_searched", "details": {"query": "cars writing", "results": 0}}
+{"timestamp": "2025-10-09T17:37:41.025854", "action": "hf_datasets_searched", "details": {"query": "writing", "results": 10}}
+{"timestamp": "2025-10-09T17:57:59.756229", "action": "training_started", "details": {"train_id": "9b4fd8a0-34bf-4284-bd3b-c7adcc4b31bc", "base_model": "llama-2-7b", "dataset_ids": ["test"]}}
+{"timestamp": "2025-10-09T17:58:08.555432", "action": "dataset_ingested_single", "details": {"dataset_id": "c2d523ad-4345-4759-8ed8-08fa33658f84", "filename": "sample1.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T17:58:12.045913", "action": "training_started", "details": {"train_id": "38b79b9a-3996-43b4-bfb4-91482d4b45eb", "base_model": "llama-2-7b", "dataset_ids": ["c2d523ad-4345-4759-8ed8-08fa33658f84"]}}
+{"timestamp": "2025-10-09T17:58:22.055503", "action": "training_completed", "details": {"talent_id": "38b79b9a-3996-43b4-bfb4-91482d4b45eb"}}
+{"timestamp": "2025-10-09T18:01:37.566896", "action": "hf_dataset_downloaded", "details": {"dataset_id": "test", "local_id": "944c4d67-e1a9-499c-a0cc-27d0c2c38e99", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:01:38.951679", "action": "hf_datasets_searched", "details": {"query": "text", "results": 19}}
+{"timestamp": "2025-10-09T18:01:41.046258", "action": "hf_dataset_downloaded", "details": {"dataset_id": "orionweller/ProLong-TextFull", "local_id": "23e613a4-27ac-46dd-9b1c-831911393a1d", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:09:27.621790", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:09:27.624642", "action": "talents_listed_mcp", "details": {"count": 0}}
+{"timestamp": "2025-10-09T18:09:41.755473", "action": "hf_datasets_searched", "details": {"query": "writing", "results": 10}}
+{"timestamp": "2025-10-09T18:09:48.642049", "action": "hf_dataset_downloaded", "details": {"dataset_id": "euclaise/writingprompts", "local_id": "6f3c9dbc-617a-48a0-a522-1759a312c46d", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:10:00.016330", "action": "hf_datasets_searched", "details": {"query": "writing", "results": 10}}
+{"timestamp": "2025-10-09T18:10:02.994517", "action": "hf_dataset_downloaded", "details": {"dataset_id": "telecomadm1145/creative_writing", "local_id": "8e77cf5e-4ad4-4d35-aa00-ad4ecaac60f4", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:11:05.902949", "action": "dataset_ingested_single", "details": {"dataset_id": "f7f6bd93-49f3-4f9b-a145-46b6b01ccc46", "filename": "Documentation Best Practices _ styleguide.pdf", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:11:27.089235", "action": "training_started", "details": {"train_id": "c4c60191-4f99-4bf3-a9f0-2adf0030bd81", "base_model": "mistral-7b", "dataset_ids": ["6f3c9dbc-617a-48a0-a522-1759a312c46d", "8e77cf5e-4ad4-4d35-aa00-ad4ecaac60f4", "f7f6bd93-49f3-4f9b-a145-46b6b01ccc46"]}}
+{"timestamp": "2025-10-09T18:11:37.106053", "action": "training_completed", "details": {"talent_id": "c4c60191-4f99-4bf3-a9f0-2adf0030bd81"}}
+{"timestamp": "2025-10-09T18:11:37.114972", "action": "evaluation_completed", "details": {"eval_id": "123a95fe-aff4-4826-8ba3-bfd30000f6fa", "talent_id": "c4c60191-4f99-4bf3-a9f0-2adf0030bd81", "safety_score": 0.92, "rubric_passed": true}}
+{"timestamp": "2025-10-09T18:12:24.903577", "action": "talent_published", "details": {"talent_id": "talent_1760029944891", "name": "Writing helper", "category": "writing"}}
+{"timestamp": "2025-10-09T18:12:24.910812", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:12:24.911624", "action": "talents_listed_mcp", "details": {"count": 1}}
+{"timestamp": "2025-10-09T18:13:06.479048", "action": "dataset_ingested_single", "details": {"dataset_id": "3e15a456-c847-41e0-9f2a-6c38493e51a0", "filename": "sample1.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:13:50.266574", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:13:50.271403", "action": "talents_listed_mcp", "details": {"count": 1}}
+{"timestamp": "2025-10-09T18:16:03.430429", "action": "hf_datasets_searched", "details": {"query": "finance", "results": 10}}
+{"timestamp": "2025-10-09T18:16:14.285219", "action": "hf_dataset_downloaded", "details": {"dataset_id": "artefactory/Argimi-Ardian-Finance-10k-text", "local_id": "eef020e6-2ba8-4ec6-a324-931c607cf2bd", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:16:21.533795", "action": "hf_datasets_searched", "details": {"query": "finance", "results": 10}}
+{"timestamp": "2025-10-09T18:16:59.015886", "action": "hf_dataset_downloaded", "details": {"dataset_id": "sujet-ai/Sujet-Finance-Instruct-177k", "local_id": "54d34651-eb48-4ec3-91ad-e9acb48a72ab", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:17:12.260264", "action": "hf_datasets_searched", "details": {"query": "finance", "results": 10}}
+{"timestamp": "2025-10-09T18:17:18.900066", "action": "hf_dataset_downloaded", "details": {"dataset_id": "BAAI/IndustryCorpus2_finance_economics", "local_id": "6c8da9f8-e627-4730-a6f5-dd58aed0ab1a", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:17:28.480225", "action": "training_started", "details": {"train_id": "57db1e4a-553b-4900-b6d8-5d59c4de0c69", "base_model": "llama-2-13b", "dataset_ids": ["eef020e6-2ba8-4ec6-a324-931c607cf2bd", "54d34651-eb48-4ec3-91ad-e9acb48a72ab", "6c8da9f8-e627-4730-a6f5-dd58aed0ab1a"]}}
+{"timestamp": "2025-10-09T18:17:38.490687", "action": "training_completed", "details": {"talent_id": "57db1e4a-553b-4900-b6d8-5d59c4de0c69"}}
+{"timestamp": "2025-10-09T18:17:39.501254", "action": "evaluation_completed", "details": {"eval_id": "6a74843d-d04a-40b4-9069-41faef10843c", "talent_id": "57db1e4a-553b-4900-b6d8-5d59c4de0c69", "safety_score": 0.92, "rubric_passed": true}}
+{"timestamp": "2025-10-09T18:18:13.282729", "action": "talent_published", "details": {"talent_id": "talent_1760030293272", "name": "Financial Analyst", "category": "analysis"}}
+{"timestamp": "2025-10-09T18:18:13.291590", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:18:13.292534", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-09T18:20:35.581018", "action": "training_started", "details": {"train_id": "2b9ae956-1004-4a8c-8c7c-82c56c6ec410", "base_model": "llama-2-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:20:45.636100", "action": "training_completed", "details": {"talent_id": "2b9ae956-1004-4a8c-8c7c-82c56c6ec410"}}
+{"timestamp": "2025-10-09T18:21:13.418606", "action": "training_started", "details": {"train_id": "e5c07dfa-8bc2-42e3-9032-ccfae9060319", "base_model": "llama-2-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:21:32.439156", "action": "training_started", "details": {"train_id": "799068cf-b8cc-40de-bd40-14b296483847", "base_model": "llama-2-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:21:40.897296", "action": "training_started", "details": {"train_id": "f1f15ca1-a7c0-4a86-8e90-451bdc7304cc", "base_model": "llama-2-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:22:07.883860", "action": "training_started", "details": {"train_id": "1dc5cd42-4cc4-4cd5-8f85-6cbae19be1b2", "base_model": "llama-2-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:22:08.173482", "action": "training_completed", "details": {"talent_id": "1dc5cd42-4cc4-4cd5-8f85-6cbae19be1b2"}}
+{"timestamp": "2025-10-09T18:22:33.160560", "action": "training_started", "details": {"train_id": "a707c4cb-9214-43e7-af5b-d6298c8796ab", "base_model": "codellama-7b", "dataset_ids": ["3e15a456-c847-41e0-9f2a-6c38493e51a0"]}}
+{"timestamp": "2025-10-09T18:23:01.465396", "action": "training_completed", "details": {"talent_id": "a707c4cb-9214-43e7-af5b-d6298c8796ab"}}
+{"timestamp": "2025-10-09T18:23:05.307147", "action": "dataset_ingested_single", "details": {"dataset_id": "db7bd09d-a910-4375-bb4a-14d17cbdcd93", "filename": "sample_1.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.054934", "action": "dataset_ingested_single", "details": {"dataset_id": "3110fa63-6c5d-46de-8dd6-d63d575b0d7a", "filename": "sample_2.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.067177", "action": "dataset_ingested_single", "details": {"dataset_id": "eeadcfd2-c99b-4961-9c37-3268fab4b1e8", "filename": "sample_3.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.079167", "action": "dataset_ingested_single", "details": {"dataset_id": "1204d39d-4aef-4791-9e76-ec03a5e02be2", "filename": "sample_4.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.090658", "action": "dataset_ingested_single", "details": {"dataset_id": "5d57fd7f-2078-42f3-b7da-5fcb471d3485", "filename": "sample_5.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.103474", "action": "dataset_ingested_single", "details": {"dataset_id": "a76159ba-02b6-4475-8255-110dd433bf38", "filename": "sample_6.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.115283", "action": "dataset_ingested_single", "details": {"dataset_id": "8a7fc8e0-22e2-4aaf-8f97-167415a4ad27", "filename": "sample_7.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.126587", "action": "dataset_ingested_single", "details": {"dataset_id": "dc2954d5-5416-4883-9b31-74b25b52912e", "filename": "sample_8.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.138060", "action": "dataset_ingested_single", "details": {"dataset_id": "ac79ede8-c103-40eb-add1-8e8688048417", "filename": "sample_9.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.150363", "action": "dataset_ingested_single", "details": {"dataset_id": "0340aceb-9456-47f4-a05b-9a7ca5db4043", "filename": "sample_10.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.162277", "action": "dataset_ingested_single", "details": {"dataset_id": "f7466612-42d7-41f9-98b8-5142197871a4", "filename": "sample_11.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.173902", "action": "dataset_ingested_single", "details": {"dataset_id": "eb00fc28-51e0-4e1b-8964-1af7f5908d8c", "filename": "sample_12.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.185810", "action": "dataset_ingested_single", "details": {"dataset_id": "62584328-2fe2-4597-97db-b2cc81586715", "filename": "sample_13.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.197476", "action": "dataset_ingested_single", "details": {"dataset_id": "4f30e586-5367-445d-bfed-f46d73773c3e", "filename": "sample_14.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:07.208699", "action": "dataset_ingested_single", "details": {"dataset_id": "5e3b14ae-99dd-4cd2-a307-3e2f4bc53e6c", "filename": "sample_15.txt", "rows": 1, "has_pii": false}}
+{"timestamp": "2025-10-09T18:23:12.088540", "action": "training_started", "details": {"train_id": "66d1256c-0b70-4408-96fd-5861fc43111a", "base_model": "codellama-7b", "dataset_ids": ["db7bd09d-a910-4375-bb4a-14d17cbdcd93", "3110fa63-6c5d-46de-8dd6-d63d575b0d7a", "eeadcfd2-c99b-4961-9c37-3268fab4b1e8", "1204d39d-4aef-4791-9e76-ec03a5e02be2", "5d57fd7f-2078-42f3-b7da-5fcb471d3485", "a76159ba-02b6-4475-8255-110dd433bf38", "8a7fc8e0-22e2-4aaf-8f97-167415a4ad27", "dc2954d5-5416-4883-9b31-74b25b52912e", "ac79ede8-c103-40eb-add1-8e8688048417", "0340aceb-9456-47f4-a05b-9a7ca5db4043", "f7466612-42d7-41f9-98b8-5142197871a4", "eb00fc28-51e0-4e1b-8964-1af7f5908d8c", "62584328-2fe2-4597-97db-b2cc81586715", "4f30e586-5367-445d-bfed-f46d73773c3e", "5e3b14ae-99dd-4cd2-a307-3e2f4bc53e6c"]}}
+{"timestamp": "2025-10-09T18:23:12.921105", "action": "training_completed", "details": {"talent_id": "66d1256c-0b70-4408-96fd-5861fc43111a"}}
+{"timestamp": "2025-10-09T18:23:49.811911", "action": "training_started", "details": {"train_id": "d106a798-d9e8-41b5-99af-2a6928a14bfd", "base_model": "codellama-7b", "dataset_ids": ["db7bd09d-a910-4375-bb4a-14d17cbdcd93", "3110fa63-6c5d-46de-8dd6-d63d575b0d7a", "eeadcfd2-c99b-4961-9c37-3268fab4b1e8", "1204d39d-4aef-4791-9e76-ec03a5e02be2", "5d57fd7f-2078-42f3-b7da-5fcb471d3485", "a76159ba-02b6-4475-8255-110dd433bf38", "8a7fc8e0-22e2-4aaf-8f97-167415a4ad27", "dc2954d5-5416-4883-9b31-74b25b52912e", "ac79ede8-c103-40eb-add1-8e8688048417", "0340aceb-9456-47f4-a05b-9a7ca5db4043", "f7466612-42d7-41f9-98b8-5142197871a4", "eb00fc28-51e0-4e1b-8964-1af7f5908d8c", "62584328-2fe2-4597-97db-b2cc81586715", "4f30e586-5367-445d-bfed-f46d73773c3e", "5e3b14ae-99dd-4cd2-a307-3e2f4bc53e6c"]}}
+{"timestamp": "2025-10-09T18:23:50.782642", "action": "training_completed", "details": {"talent_id": "d106a798-d9e8-41b5-99af-2a6928a14bfd"}}
+{"timestamp": "2025-10-09T18:24:31.070958", "action": "training_started", "details": {"train_id": "a85c3c57-7ad2-4d90-a713-ea07d7332f72", "base_model": "codellama-7b", "dataset_ids": ["db7bd09d-a910-4375-bb4a-14d17cbdcd93", "3110fa63-6c5d-46de-8dd6-d63d575b0d7a", "eeadcfd2-c99b-4961-9c37-3268fab4b1e8", "1204d39d-4aef-4791-9e76-ec03a5e02be2", "5d57fd7f-2078-42f3-b7da-5fcb471d3485", "a76159ba-02b6-4475-8255-110dd433bf38", "8a7fc8e0-22e2-4aaf-8f97-167415a4ad27", "dc2954d5-5416-4883-9b31-74b25b52912e", "ac79ede8-c103-40eb-add1-8e8688048417", "0340aceb-9456-47f4-a05b-9a7ca5db4043", "f7466612-42d7-41f9-98b8-5142197871a4", "eb00fc28-51e0-4e1b-8964-1af7f5908d8c", "62584328-2fe2-4597-97db-b2cc81586715", "4f30e586-5367-445d-bfed-f46d73773c3e", "5e3b14ae-99dd-4cd2-a307-3e2f4bc53e6c"]}}
+{"timestamp": "2025-10-09T18:25:04.994644", "action": "training_completed", "details": {"talent_id": "a85c3c57-7ad2-4d90-a713-ea07d7332f72"}}
+{"timestamp": "2025-10-09T18:28:19.031978", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:28:19.034433", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-09T18:33:09.223199", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T18:33:09.227754", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-09T18:33:42.414991", "action": "hf_datasets_searched", "details": {"query": "maths", "results": 10}}
+{"timestamp": "2025-10-09T18:33:53.232661", "action": "hf_dataset_downloaded", "details": {"dataset_id": "azminetoushikwasi/math-story-problems", "local_id": "65ba8323-3ef8-492d-b5e0-33c39014e665", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:34:04.841867", "action": "hf_datasets_searched", "details": {"query": "astronomy", "results": 10}}
+{"timestamp": "2025-10-09T18:34:56.780161", "action": "hf_dataset_downloaded", "details": {"dataset_id": "Josephgflowers/Par-Four-Fineweb-Edu-Fortified-Chemistry-Physics-Astronomy-Math-Reason", "local_id": "461e5b47-293c-44e9-8884-50780c668352", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:35:19.470609", "action": "hf_datasets_searched", "details": {"query": "planets", "results": 6}}
+{"timestamp": "2025-10-09T18:35:38.730610", "action": "hf_dataset_downloaded", "details": {"dataset_id": "paidaixing/Planet_Scale_Depth_Dataset", "local_id": "ae2c2119-1cfe-45d4-8071-fdf36b403b82", "sample_size": 100}}
+{"timestamp": "2025-10-09T18:35:45.483757", "action": "training_started", "details": {"train_id": "50251dd8-1020-4f83-a81a-f80a17407e2f", "base_model": "llama-2-7b", "dataset_ids": ["65ba8323-3ef8-492d-b5e0-33c39014e665", "461e5b47-293c-44e9-8884-50780c668352", "ae2c2119-1cfe-45d4-8071-fdf36b403b82"]}}
+{"timestamp": "2025-10-09T19:19:41.792436", "action": "training_completed", "details": {"talent_id": "50251dd8-1020-4f83-a81a-f80a17407e2f"}}
+{"timestamp": "2025-10-09T19:19:42.120723", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T19:19:42.122335", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-09T19:20:32.162385", "action": "training_started", "details": {"train_id": "4c0dbd60-b9cf-43b9-855b-0c09b78d0c19", "base_model": "llama-2-7b", "dataset_ids": ["test"]}}
+{"timestamp": "2025-10-09T19:20:34.406023", "action": "training_completed", "details": {"talent_id": "4c0dbd60-b9cf-43b9-855b-0c09b78d0c19"}}
+{"timestamp": "2025-10-09T22:30:28.753260", "action": "models_listed", "details": {"count": 4}}
+{"timestamp": "2025-10-09T22:30:28.755149", "action": "talents_listed_mcp", "details": {"count": 2}}
+{"timestamp": "2025-10-09T22:31:20.173026", "action": "hf_datasets_searched", "details": {"query": "stars", "results": 10}}

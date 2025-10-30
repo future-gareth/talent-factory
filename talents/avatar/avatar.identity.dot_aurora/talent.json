@@ -1,0 +1,30 @@
+{
+  "id": "avatar.identity.dot_aurora",
+  "category": "Presence/Avatar",
+  "kind": "lora",
+  "sdx_version": "1.5",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "lora_rank": 16,
+  "default_weight": 1.0,
+  "negatives": "photo, hyperrealistic, text, watermark",
+  "size_mb": 0.1,
+  "created_at": "2025-10-11T22:40:28.145498",
+  "training_config": {
+    "resolution": 640,
+    "max_train_steps": 4000,
+    "learning_rate": 0.0001,
+    "batch_size": 1
+  },
+  "metadata": {
+    "description": "Unique identity LoRA for Dot Aurora character",
+    "tags": [
+      "identity",
+      "character",
+      "dot_aurora",
+      "persona"
+    ],
+    "author": "Talent Factory",
+    "license": "Private"
+  },
+  "token": "dot_aurora"
+}

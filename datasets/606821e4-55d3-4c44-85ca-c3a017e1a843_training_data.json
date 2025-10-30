@@ -1,0 +1,7 @@
+[
+  {
+    "instruction": "Summarize the following content from api-specification (1).json:",
+    "input": "{\n  \"openapi\": \"3.0.0\",\n  \"info\": {\n    \"title\": \"API Design for MachinePay KYB-as-a-Service\",\n    \"description\": \"**API Design for MachinePay KYB-as-a-Service**\\n\\n**Overview**: A RESTful API that automates business verification (KYB) across jurisdictions, processing documents and validating business information.\",\n    \"version\": \"1.0.0\"\n  },\n  \"servers\": [\n    {\n      \"url\": \"https://api.example.com/v1\",\n      \"description\": \"Production server\"\n    }\n  ],\n  \"paths\": {\n    \"/businesses**\": {\n  ...",
+    "output": "This content is from api-specification (1).json and contains detailed information."
+  }
+]

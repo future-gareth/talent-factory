@@ -1,0 +1,5 @@
+{
+  "tokenizer": "mlx_tokenizer",
+  "vocab_size": 32000,
+  "model_max_length": 2048
+}
