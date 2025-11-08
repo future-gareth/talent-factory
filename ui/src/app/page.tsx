@@ -47,6 +47,17 @@ interface Model {
   min_vram_gb: number
   description: string
   category: string
+  hf_model?: string
+  recommended?: boolean
+}
+
+interface ModelDownloadStatus {
+  status: 'not_downloaded' | 'downloading' | 'cached' | 'error'
+  model_id: string
+  progress?: number
+  message?: string
+  cache_path?: string
+  error?: string
 }
 
 interface Talent {
@@ -78,6 +89,10 @@ export default function TalentFactory() {
   const [activeTrainingId, setActiveTrainingId] = useState<string | null>(null)
   const [websocket, setWebsocket] = useState<WebSocket | null>(null)
   
+  // Model download state
+  const [modelDownloadStatus, setModelDownloadStatus] = useState<Record<string, ModelDownloadStatus>>({})
+  const [downloadingModel, setDownloadingModel] = useState<string | null>(null)
+  
   // Hugging Face dataset search
   const [hfSearchQuery, setHfSearchQuery] = useState('')
   const [hfSearchResults, setHfSearchResults] = useState<any[]>([])
@@ -93,6 +108,7 @@ export default function TalentFactory() {
     loadData()
     checkForActiveTraining()
     initializeWebSocket()
+    checkModelsDownloadStatus()
     
     // Clean up any stale training IDs on mount
     const cleanupStaleTraining = async () => {
@@ -122,60 +138,61 @@ export default function TalentFactory() {
 
   // Poll for training status if WebSocket connection is lost or no progress updates
   useEffect(() => {
-    if (activeTrainingId) {
-      const initialProgress = (trainingStatus && typeof trainingStatus.progress === 'number') ? trainingStatus.progress : 0
-      let lastProgress = initialProgress
+    if (!activeTrainingId) return
+    
+    let lastProgress = 0
+    let isPolling = false
+    
+    const pollTrainingStatus = async () => {
+      if (isPolling) return // Prevent overlapping polls
+      isPolling = true
       
-      const pollInterval = setInterval(async () => {
-        try {
-          const response = await fetch(`http://localhost:8084/train/status/${activeTrainingId}`)
-          if (response.ok) {
-            const status = await response.json()
-            console.log('Polling training status:', status.status, 'progress:', status.progress)
-            
-            // Update status if it's different
-            const nextProgress = (typeof status.progress === 'number') ? status.progress : 0
-            const prevStatus = trainingStatus ? trainingStatus.status : undefined
-            if (nextProgress !== lastProgress || status.status !== prevStatus) {
-              console.log('Progress changed, updating UI')
-              setTrainingStatus(status)
-              lastProgress = nextProgress
-            }
-            
-            if (status.status === 'completed' || status.status === 'failed' || status.status === 'stopped') {
-              console.log('Training finished, clearing state')
-              localStorage.removeItem('activeTrainingId')
-              setActiveTrainingId(null)
-              clearInterval(pollInterval)
-              
-              if (status.status === 'completed') {
-                runEvaluation(activeTrainingId)
-              }
-            }
-          } else if (response.status === 404) {
-            // Training not found, clear stale training ID
-            console.log('Training not found (404), clearing stale training ID')
-            localStorage.removeItem('activeTrainingId')
-            setActiveTrainingId(null)
-            clearInterval(pollInterval)
-          }
-        } catch (error) {
-          console.error('Error polling training status:', error)
+      try {
+        const response = await fetch(`http://localhost:8084/train/status/${activeTrainingId}`)
+        if (response.ok) {
+          const status = await response.json()
           
-          // If we get a connection error or 404, the training might not exist anymore
-          // Clear the stale training ID to stop polling
-          if (error.message && (error.message.includes('Failed to fetch') || error.message.includes('404'))) {
-            console.log('Training not found, clearing stale training ID')
+          // Only log if there's a change
+          const nextProgress = (typeof status.progress === 'number') ? status.progress : 0
+          if (nextProgress !== lastProgress) {
+            console.log('Training progress:', status.status, nextProgress + '%')
+            lastProgress = nextProgress
+          }
+          
+          setTrainingStatus(status)
+          
+          if (status.status === 'completed' || status.status === 'failed' || status.status === 'stopped') {
+            console.log('Training finished:', status.status)
             localStorage.removeItem('activeTrainingId')
             setActiveTrainingId(null)
-            clearInterval(pollInterval)
+            
+            if (status.status === 'completed') {
+              runEvaluation(activeTrainingId)
+            }
+            return // Stop polling
           }
+        } else if (response.status === 404) {
+          console.log('Training not found, clearing stale ID')
+          localStorage.removeItem('activeTrainingId')
+          setActiveTrainingId(null)
+          return // Stop polling
         }
-      }, 3000) // Poll every 3 seconds
-      
-      return () => clearInterval(pollInterval)
+      } catch (error) {
+        console.error('Error polling training status:', error)
+      } finally {
+        isPolling = false
+      }
     }
-  }, [activeTrainingId, trainingStatus])
+    
+    // Initial poll
+    pollTrainingStatus()
+    
+    // Poll every 30 seconds as fallback (WebSocket provides real-time updates)
+    // This is just a safety net in case WebSocket disconnects or misses updates
+    const pollInterval = setInterval(pollTrainingStatus, 30000)
+    
+    return () => clearInterval(pollInterval)
+  }, [activeTrainingId]) // Only depend on activeTrainingId, not trainingStatus
 
   const initializeWebSocket = () => {
     try {
@@ -184,6 +201,17 @@ export default function TalentFactory() {
       ws.onopen = () => {
         console.log('WebSocket connected')
         setWebsocket(ws)
+        
+        // Subscribe to active training if we have one
+        const storedTrainingId = localStorage.getItem('activeTrainingId')
+        if (storedTrainingId) {
+          console.log('Subscribing to stored training on WebSocket open:', storedTrainingId)
+          // Use ws directly since setWebsocket might not have updated the state yet
+          ws.send(JSON.stringify({
+            type: 'subscribe_training',
+            train_id: storedTrainingId
+          }))
+        }
       }
       
       ws.onmessage = (event) => {
@@ -215,30 +243,84 @@ export default function TalentFactory() {
     }
   }
 
+  const subscribeToTraining = (trainId: string) => {
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+      console.log('Subscribing to training:', trainId)
+      websocket.send(JSON.stringify({
+        type: 'subscribe_training',
+        train_id: trainId
+      }))
+    }
+  }
+
+  const unsubscribeFromTraining = (trainId: string) => {
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+      console.log('Unsubscribing from training:', trainId)
+      websocket.send(JSON.stringify({
+        type: 'unsubscribe_training',
+        train_id: trainId
+      }))
+    }
+  }
+
   const handleWebSocketMessage = (message: any) => {
-    console.log('Handling WebSocket message:', message.type, 'for training:', message.train_id, 'active:', activeTrainingId)
     switch (message.type) {
+      case 'subscription_confirmed':
+        console.log('Subscription confirmed for:', message.train_id, message.status)
+        break
+      
       case 'training_update':
-        if (message.train_id === activeTrainingId) {
-          console.log('Updating training status:', message.data)
+        // Check if this is for our current training OR if we have this training stored in localStorage
+        const storedTrainingId = localStorage.getItem('activeTrainingId')
+        const isOurTraining = message.train_id === activeTrainingId || message.train_id === storedTrainingId
+        
+        if (isOurTraining) {
+          console.log('Training update:', message.data.status, `${message.data.progress || 0}%`)
+          
+          // Update state
           setTrainingStatus({
             ...message.data,
             train_id: message.train_id
           })
           
+          // Ensure activeTrainingId is set if we got a message for it
+          if (!activeTrainingId && message.train_id === storedTrainingId) {
+            setActiveTrainingId(storedTrainingId)
+          }
+          
           // Handle completion
           if (message.data.status === 'completed') {
-            console.log('Training completed, clearing localStorage and running evaluation')
+            console.log('Training completed via WebSocket')
             localStorage.removeItem('activeTrainingId')
             setActiveTrainingId(null)
             runEvaluation(message.train_id)
           } else if (message.data.status === 'failed' || message.data.status === 'stopped') {
-            console.log('Training failed/stopped, clearing localStorage')
+            console.log('Training', message.data.status, 'via WebSocket')
             localStorage.removeItem('activeTrainingId')
             setActiveTrainingId(null)
           }
-        } else {
-          console.log('Message for different training ID, ignoring')
+        }
+        break
+      
+      case 'system_update':
+        // Handle model download progress
+        if (message.data?.event === 'model_download_progress') {
+          const modelId = message.data.model_id
+          setModelDownloadStatus(prev => ({
+            ...prev,
+            [modelId]: {
+              status: message.data.status === 'completed' ? 'cached' : message.data.status === 'error' ? 'error' : 'downloading',
+              model_id: modelId,
+              progress: message.data.progress,
+              message: message.data.message,
+              cache_path: message.data.cache_path,
+              error: message.data.error
+            }
+          }))
+          
+          if (message.data.status === 'completed' || message.data.status === 'error') {
+            setDownloadingModel(null)
+          }
         }
         break
         
@@ -255,22 +337,103 @@ export default function TalentFactory() {
     }
   }
 
-  const subscribeToTraining = (trainId: string) => {
-    if (websocket && websocket.readyState === WebSocket.OPEN) {
-      websocket.send(JSON.stringify({
-        type: 'subscribe_training',
-        train_id: trainId
-      }))
+  // Check model download status for all models
+  const checkModelsDownloadStatus = async () => {
+    try {
+      const response = await fetch('http://localhost:8084/models/available')
+      const data = await response.json()
+      
+      // Check status only for models that support downloading (have hf_model field)
+      if (data.models && Array.isArray(data.models)) {
+        for (const model of data.models) {
+          // Only check MLX models that have hf_model field
+          if (model.hf_model) {
+            checkModelDownloadStatus(model.id)
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Failed to check models download status:', error)
     }
   }
 
-  const unsubscribeFromTraining = (trainId: string) => {
-    if (websocket && websocket.readyState === WebSocket.OPEN) {
-      websocket.send(JSON.stringify({
-        type: 'unsubscribe_training',
-        train_id: trainId
+  // Check download status for a specific model
+  const checkModelDownloadStatus = async (modelId: string) => {
+    try {
+      const response = await fetch(`http://localhost:8084/model/status/${modelId}`)
+      const status: ModelDownloadStatus = await response.json()
+      setModelDownloadStatus(prev => ({
+        ...prev,
+        [modelId]: status
       }))
+    } catch (error) {
+      console.error(`Failed to check download status for ${modelId}:`, error)
     }
+  }
+
+  // Download a model
+  const downloadModel = async (model: Model) => {
+    if (!model.hf_model) {
+      console.error('Model does not have hf_model specified')
+      return
+    }
+
+    try {
+      setDownloadingModel(model.id)
+      setModelDownloadStatus(prev => ({
+        ...prev,
+        [model.id]: {
+          status: 'downloading',
+          model_id: model.id,
+          progress: 0,
+          message: 'Starting download...'
+        }
+      }))
+
+      const response = await fetch(`http://localhost:8084/model/download?model_id=${model.id}&hf_model_id=${encodeURIComponent(model.hf_model)}`, {
+        method: 'POST'
+      })
+      
+      const result = await response.json()
+      
+      if (result.status === 'cached') {
+        setModelDownloadStatus(prev => ({
+          ...prev,
+          [model.id]: {
+            status: 'cached',
+            model_id: model.id,
+            message: 'Model already downloaded',
+            cache_path: result.cache_path
+          }
+        }))
+        setDownloadingModel(null)
+      }
+      // WebSocket will handle progress updates
+      
+    } catch (error) {
+      console.error('Failed to start model download:', error)
+      setModelDownloadStatus(prev => ({
+        ...prev,
+        [model.id]: {
+          status: 'error',
+          model_id: model.id,
+          error: error instanceof Error ? error.message : 'Download failed'
+        }
+      }))
+      setDownloadingModel(null)
+    }
+  }
+
+  // Check if selected model is downloaded
+  const isModelDownloaded = (modelId: string | undefined): boolean => {
+    if (!modelId) return false
+    const status = modelDownloadStatus[modelId]
+    return status?.status === 'cached'
+  }
+
+  // Get download progress for a model
+  const getModelDownloadProgress = (modelId: string): number => {
+    return modelDownloadStatus[modelId]?.progress || 0
   }
 
   const checkForActiveTraining = async () => {
@@ -516,6 +679,12 @@ export default function TalentFactory() {
   const startTraining = async () => {
     if (!selectedModel || uploadedFiles.length === 0) return
 
+    // Check if model is downloaded
+    if (!isModelDownloaded(selectedModel.id)) {
+      alert('Please download the model first before training.')
+      return
+    }
+
     const trainingParams = {
       base_model: selectedModel.id,
       dataset_ids: uploadedFiles.map(f => f.dataset_id),
@@ -533,6 +702,13 @@ export default function TalentFactory() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(trainingParams)
       })
+      
+      if (!response.ok) {
+        const error = await response.json()
+        alert(error.detail || 'Failed to start training')
+        return
+      }
+      
       const result = await response.json()
 
       if (result.status === 'started') {
@@ -547,13 +723,21 @@ export default function TalentFactory() {
         // Save training ID to localStorage for persistence
         localStorage.setItem('activeTrainingId', result.train_id)
         
-        // Subscribe to WebSocket updates instead of polling
-        setTimeout(() => {
-          subscribeToTraining(result.train_id)
-        }, 1000) // Wait for WebSocket to be ready
+        // Subscribe to WebSocket updates for real-time progress
+        // Try immediately if WebSocket is ready, otherwise retry
+        const trySubscribe = () => {
+          if (websocket && websocket.readyState === WebSocket.OPEN) {
+            subscribeToTraining(result.train_id)
+          } else {
+            // Retry after 500ms if WebSocket isn't ready yet
+            setTimeout(trySubscribe, 500)
+          }
+        }
+        trySubscribe()
       }
     } catch (error) {
       console.error('Failed to start training:', error)
+      alert('Failed to start training: ' + (error instanceof Error ? error.message : 'Unknown error'))
     }
   }
 
@@ -894,37 +1078,117 @@ export default function TalentFactory() {
                     <p className="text-muted-foreground">Select a compatible model for fine-tuning based on your hardware.</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {models.map((model) => (
-                        <Card 
-                          key={model.id} 
-                          className={`cursor-pointer transition-colors ${
-                            selectedModel?.id === model.id ? 'border-primary bg-primary/5' : 'hover:border-primary/50'
-                          }`}
-                          onClick={() => setSelectedModel(model)}
-                        >
-                          <CardHeader>
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <CardTitle className="text-base">{model.name}</CardTitle>
-                                <CardDescription className="mt-1">{model.description}</CardDescription>
-                                <div className="flex items-center mt-2 space-x-4 text-xs text-muted-foreground">
-                                  <span>{model.size_gb} GB</span>
-                                  <span>{model.min_vram_gb} GB VRAM min</span>
+                      {models.map((model) => {
+                        const downloadStatus = modelDownloadStatus[model.id]
+                        const isDownloaded = downloadStatus?.status === 'cached'
+                        const isDownloading = downloadStatus?.status === 'downloading'
+                        const downloadProgress = downloadStatus?.progress || 0
+                        
+                        return (
+                          <Card 
+                            key={model.id} 
+                            className={`transition-colors ${
+                              selectedModel?.id === model.id ? 'border-primary bg-primary/5' : 'hover:border-primary/50'
+                            }`}
+                          >
+                            <CardHeader>
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <div className="flex items-center space-x-2">
+                                    <CardTitle className="text-base">{model.name}</CardTitle>
+                                    {model.recommended && (
+                                      <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
+                                        Recommended
+                                      </span>
+                                    )}
+                                  </div>
+                                  <CardDescription className="mt-1">{model.description}</CardDescription>
+                                  <div className="flex items-center mt-2 space-x-4 text-xs text-muted-foreground">
+                                    <span>{model.size_gb} GB</span>
+                                    {isDownloaded && (
+                                      <span className="text-green-600 font-medium">✓ Downloaded</span>
+                                    )}
+                                    {isDownloading && (
+                                      <span className="text-blue-600 font-medium">Downloading... {downloadProgress}%</span>
+                                    )}
+                                    {!isDownloaded && !isDownloading && (
+                                      <span className="text-orange-600 font-medium">Not Downloaded</span>
+                                    )}
+                                  </div>
+                                  
+                                  {/* Download Progress Bar */}
+                                  {isDownloading && (
+                                    <div className="mt-3">
+                                      <Progress value={downloadProgress} className="h-2" />
+                                      <p className="text-xs text-muted-foreground mt-1">
+                                        {downloadStatus?.message || 'Downloading...'}
+                                      </p>
+                                    </div>
+                                  )}
+                                  
+                                  {/* Download Error */}
+                                  {downloadStatus?.status === 'error' && (
+                                    <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded text-xs text-red-600">
+                                      Error: {downloadStatus.error}
+                                    </div>
+                                  )}
+                                  
+                                  {/* Download Button */}
+                                  <div className="mt-3 flex space-x-2">
+                                    {!isDownloaded && !isDownloading && (
+                                      <Button
+                                        size="sm"
+                                        variant={selectedModel?.id === model.id ? "default" : "outline"}
+                                        onClick={(e) => {
+                                          e.stopPropagation()
+                                          downloadModel(model)
+                                        }}
+                                        disabled={downloadingModel === model.id}
+                                      >
+                                        <Download className="h-3 w-3 mr-1" />
+                                        Download Model
+                                      </Button>
+                                    )}
+                                    {isDownloaded && (
+                                      <Button
+                                        size="sm"
+                                        variant={selectedModel?.id === model.id ? "default" : "outline"}
+                                        onClick={(e) => {
+                                          e.stopPropagation()
+                                          setSelectedModel(model)
+                                        }}
+                                      >
+                                        {selectedModel?.id === model.id ? '✓ Selected' : 'Select Model'}
+                                      </Button>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
-                              <div className={`w-4 h-4 rounded-full border-2 ${
-                                selectedModel?.id === model.id ? 'border-primary bg-primary' : 'border-muted-foreground'
-                              }`} />
-                            </div>
-                          </CardHeader>
-                        </Card>
-                      ))}
+                            </CardHeader>
+                          </Card>
+                        )
+                      })}
                     </div>
                     
-                    <div className="flex justify-end">
+                    <div className="flex justify-between items-center">
+                      {selectedModel && !isModelDownloaded(selectedModel.id) && (
+                        <div className="text-sm text-orange-600">
+                          ⚠️ Please download the selected model before proceeding
+                        </div>
+                      )}
+                      {!selectedModel && (
+                        <div className="text-sm text-muted-foreground">
+                          Select a model to continue
+                        </div>
+                      )}
+                      {selectedModel && isModelDownloaded(selectedModel.id) && (
+                        <div className="text-sm text-green-600">
+                          ✓ Model ready for training
+                        </div>
+                      )}
                       <Button 
                         onClick={() => setWizardStep(2)} 
-                        disabled={!selectedModel}
+                        disabled={!selectedModel || !isModelDownloaded(selectedModel.id)}
                       >
                         Next: Prepare Data
                       </Button>
@@ -1184,16 +1448,28 @@ export default function TalentFactory() {
                       </div>
                     </div>
                     
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center">
                       <Button variant="outline" onClick={() => setWizardStep(1)}>
                         Back
                       </Button>
-                      <Button 
-                        onClick={() => setWizardStep(3)} 
-                        disabled={uploadedFiles.length === 0}
-                      >
-                        Next: Train & Evaluate
-                      </Button>
+                      <div className="flex items-center space-x-3">
+                        {selectedModel && !isModelDownloaded(selectedModel.id) && (
+                          <div className="text-sm text-orange-600">
+                            ⚠️ Model not downloaded
+                          </div>
+                        )}
+                        {uploadedFiles.length === 0 && (
+                          <div className="text-sm text-orange-600">
+                            ⚠️ No training data
+                          </div>
+                        )}
+                        <Button 
+                          onClick={() => setWizardStep(3)} 
+                          disabled={uploadedFiles.length === 0 || !selectedModel || !isModelDownloaded(selectedModel.id)}
+                        >
+                          Next: Train & Evaluate
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -1304,8 +1580,17 @@ export default function TalentFactory() {
 
                     {/* Start Training Button */}
                     {!trainingStatus && (
-                      <div className="text-center">
-                        <Button onClick={startTraining} size="lg">
+                      <div className="text-center space-y-3">
+                        {selectedModel && !isModelDownloaded(selectedModel.id) && (
+                          <div className="text-sm text-orange-600 font-medium">
+                            ⚠️ Cannot start training: Model not downloaded. Please go back to Step 1 and download the model.
+                          </div>
+                        )}
+                        <Button 
+                          onClick={startTraining} 
+                          size="lg"
+                          disabled={!selectedModel || !isModelDownloaded(selectedModel.id)}
+                        >
                           <Play className="mr-2 h-4 w-4" />
                           Start Training
                         </Button>
