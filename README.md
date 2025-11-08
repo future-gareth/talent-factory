@@ -10,7 +10,8 @@ Talent Factory is a local AI workshop for creating, evaluating, and publishing f
 - **Visual Fine-Tuning**: Complete web UI with no CLI required
 - **Hardware Auto-Detection**: Automatically detects GPU/CPU capabilities and filters compatible models
 - **Data Preparation**: Upload, clean, mask PII, and validate datasets inline
-- **Real-Time Training**: Live progress monitoring with WebSocket updates
+- **Real-Time Training**: Live progress monitoring streamed over WebSocket
+- **Automatic Model Downloads**: Hugging Face integration with local caching and status tracking
 - **Evaluation Dashboard**: Base vs tuned model comparison with detailed metrics
 - **Safety Evaluation**: Built-in safety checks and rubric assessment
 - **MCP Integration**: Exposes Talent Catalogue for Dot Home discovery
@@ -47,21 +48,47 @@ This will:
    pip install -r requirements.txt
    ```
 
-2. **Start Backend Service:**
+2. **Start Backend Service (FastAPI + WebSocket):**
    ```bash
    python3 main.py
    ```
 
-3. **Start UI Server:**
+   The backend listens on `http://localhost:8084` and exposes the WebSocket endpoint at `ws://localhost:8084/ws`.
+
+3. **Install UI Dependencies (first run only):**
    ```bash
-   cd ui
-   python3 -m http.server 3004
+   cd ../ui
+   npm install
    ```
 
-4. **Open in Browser:**
+4. **Start UI Server (Next.js dev server):**
+   ```bash
+   npm run dev -- --port 3004
+   ```
+   (Use a different port, e.g. `--port 3200`, if 3004 is already in use.)
+
+5. **Open in Browser:**
    - Talent Factory: http://localhost:3004
    - Backend API: http://localhost:8084
    - MCP Catalogue: http://localhost:8084/mcp/talents
+
+### Model Downloads & Hugging Face Setup
+
+Talent Factory now downloads base models on demand before training. To enable this:
+
+1. **Authenticate with Hugging Face** (only required for gated models):
+   ```bash
+   huggingface-cli login
+   ```
+   or set `HF_TOKEN` in your shell. See `HUGGINGFACE_SETUP.md` for the step-by-step guide.
+
+2. **Pick a model in the UI** – each MLX model shows its download status.  
+   - Click **Download Model** to cache it locally under `tools/talent-factory/models/`.  
+   - Progress is streamed via WebSocket and persisted in the UI.
+
+3. **Train only after the model is cached** – the UI will prevent training until the base model reports `✓ Model ready for training`.
+
+Downloaded models are reused across runs and can be managed via the API (`GET /models/cached`, `DELETE /model/{id}`).
 
 ## How It Works
 
@@ -72,7 +99,7 @@ This will:
 - Check environment profile (GPU, VRAM, RAM)
 
 ### 2. New Talent Wizard
-- **Step 1: Choose Model** - Select compatible base model
+- **Step 1: Choose Model** - Select a compatible base model and (if needed) download it from Hugging Face
 - **Step 2: Prepare Data** - Upload and clean training dataset
 - **Step 3: Train & Evaluate** - Start fine-tuning with live progress
 - **Step 4: Publish** - Add to Talent Catalogue for Dot Home
@@ -94,11 +121,17 @@ This will:
 ### Core Endpoints
 - `GET /health` - Health check
 - `GET /env/check` - Hardware environment check
-- `GET /models/list` - List compatible models
+- `GET /models/list` - List all registered models (legacy endpoint)
+- `GET /models/available` - List models filtered for the current hardware/backend
+- `POST /model/download` - Start Hugging Face model download with progress events
+- `GET /model/status/{model_id}` - Check download/cache status for a model
+- `GET /models/cached` - List locally cached base models
+- `DELETE /model/{model_id}` - Remove a cached base model
 - `POST /dataset/ingest` - Upload dataset
 - `POST /dataset/clean` - Clean PII from dataset
 - `POST /train/start` - Start model training
 - `GET /train/status/{id}` - Get training progress
+- `POST /train/cleanup` - Manually clear stale training runs
 - `POST /evaluate/run` - Run model evaluation
 - `POST /talents/publish` - Publish talent
 - `GET /dashboard` - Get dashboard data
@@ -114,20 +147,23 @@ This will:
 
 ### Minimum Requirements
 - **CPU**: 4 cores, 8GB RAM
-- **Storage**: 50GB free space
+- **Storage**: 50GB free space (models + datasets)
 - **Network**: Local network access
 
 ### Recommended Requirements
-- **GPU**: NVIDIA GPU with 8GB+ VRAM
+- **Apple Silicon**: M2/M3 with 16GB+ unified memory (MLX backend)
+- **NVIDIA GPU**: 8GB+ VRAM for CUDA/LoRA workflows
 - **CPU**: 8+ cores, 16GB+ RAM
-- **Storage**: 100GB+ free space
+- **Storage**: 100GB+ free space for multiple cached models
 - **Network**: Gigabit Ethernet
 
-### Supported Models
-- **Llama 2 7B** - 8GB VRAM minimum
-- **Llama 2 13B** - 16GB VRAM minimum
-- **Mistral 7B** - 8GB VRAM minimum
-- **CodeLlama 7B** - 8GB VRAM minimum
+### Supported MLX Models (Apple Silicon)
+- **Gemma 2B Instruct (MLX)** – fastest for testing (`mlx-community/gemma-2b-it-4bit`)
+- **Phi-2 (MLX)** – efficient small model (`mlx-community/phi-2-4bit`)
+- **Mistral 7B Instruct (MLX)** – high quality instruction following (`mlx-community/Mistral-7B-Instruct-v0.1-4bit`)
+- **Llama 2 7B Chat (MLX)** – conversational assistant (`mlx-community/Llama-2-7b-chat-hf-4bit`)
+
+CUDA/CPU model support is still available through the legacy training engine, but Apple Silicon + MLX offers the best experience today.
 
 ## Security Features
 
@@ -159,22 +195,25 @@ This will:
 
 ```
 talent-factory/
-├── backend/                 # FastAPI backend service
-│   ├── main.py             # Main application
-│   ├── training_engine.py  # LoRA/PEFT training engine
-│   ├── mcp_catalogue.py    # MCP API endpoints
-│   ├── security.py         # Security and audit features
-│   ├── requirements.txt    # Python dependencies
-│   └── venv/               # Virtual environment
-├── ui/                      # Web UI
-│   └── index.html          # Main UI interface
-├── models/                  # Trained models storage
-├── datasets/                # Training datasets
-├── logs/                    # Audit and training logs
-├── certs/                   # SSL certificates (optional)
-├── avahi/                   # mDNS service definition
-├── start-talent-factory.sh  # Startup script
-└── README.md               # This file
+├── backend/                    # FastAPI backend
+│   ├── main.py                # API + WebSocket entrypoint
+│   ├── mlx_engine.py          # MLX training implementation
+│   ├── model_downloader.py    # Hugging Face download manager
+│   ├── websocket_handler.py   # WebSocket connection manager
+│   ├── mcp_catalogue.py       # MCP API endpoints
+│   └── requirements.txt       # Python dependencies
+├── ui/                         # Next.js 13+ app
+│   ├── package.json
+│   ├── next.config.ts
+│   └── src/app/page.tsx       # Main Talent Factory UI
+├── models/                     # Cached base models
+├── datasets/                   # Uploaded training datasets
+├── logs/                       # Backend + training logs
+├── certs/                      # TLS certificates (optional)
+├── avahi/                      # mDNS service definition
+├── start-talent-factory.sh     # One-command startup script
+├── HUGGINGFACE_SETUP.md        # Auth/setup guide for model downloads
+└── WEBSOCKET_FIX_SUMMARY.md    # Notes on realtime progress updates
 ```
 
 ## Configuration
@@ -200,6 +239,8 @@ Training parameters are automatically adjusted based on outcome preference:
 - **Speed**: Fast training, good results
 - **Balanced**: Good speed and quality (default)
 - **Quality**: Best results, longer training
+
+Additional hyperparameters (epochs, learning rate, gradient accumulation) are surfaced in the UI and ultimately passed to `backend/mlx_engine.py`. Advanced users can POST to `/train/start` with custom values if different behaviour is required.
 
 ## Dot Home Integration
 
@@ -237,6 +278,12 @@ Talent Factory advertises itself via mDNS as `talentfactory.local` with:
 - Verify dataset format and size
 - Check available disk space
 - Review training logs in `logs/` directory
+
+**Model Download Stuck or Failing**
+- Confirm you're authenticated with Hugging Face (`huggingface-cli whoami`)
+- Inspect `/tmp/talent-factory-backend.log` for HTTP errors (401 = auth, 404 = bad model ID)
+- Retry from the UI after deleting the partial cache (`DELETE /model/{id}` or remove folder under `models/`)
+- Review `HUGGINGFACE_SETUP.md` for full troubleshooting steps
 
 **MCP Integration Issues**
 - Verify MCP endpoints are accessible
@@ -324,9 +371,10 @@ sudo ./scripts/configure-firewall.sh
 ## Development
 
 ### Adding New Models
-1. Update `get_model_info()` in `training_engine.py`
-2. Add model configuration to `get_compatible_models()` in `main.py`
-3. Test model loading and training
+1. Update the MLX catalogue in `backend/mlx_engine.py` (`_get_model_info` / `list_available_models`)
+2. Register metadata in `backend/main.py` (`get_compatible_models`) so the UI picks it up
+3. (Optional) Extend `backend/model_downloader.py` if the model needs custom handling
+4. Test model download, caching, and training end-to-end
 
 ### Adding New PII Patterns
 1. Update `patterns` dictionary in `security.py`
@@ -360,27 +408,6 @@ sudo ./scripts/configure-firewall.sh
 ## License
 
 This project is part of the GarethAPI ecosystem. See the main repository for license information.
-
-## Troubleshooting
-
-### Backend Service Not Starting
-- Check if port 8084 is available
-- Ensure Python dependencies are installed (`pip install -r requirements.txt`)
-- Check the console for error messages
-
-### UI Not Loading
-- Verify the UI server is running on port 3004
-- Check browser console for errors
-- Ensure all files are in the correct locations
-
-### mDNS Not Working
-- Ensure avahi-daemon is running: `systemctl status avahi-daemon`
-- Check firewall settings allow mDNS traffic
-- Verify hostname configuration: `hostname` should return `talentfactory`
-
-### Authentication Issues
-- Check auth configuration: `curl http://localhost:8084/auth/status`
-- Enable/disable auth: `curl -X POST http://localhost:8084/auth/enable -d '{"username":"admin","password":"secret"}'`
 
 ## Support
 
